@@ -81,9 +81,32 @@ backdrop-filter:blur(8px);
 }
 
 .countdown{
-margin-top:25px;
-font-size:1.6rem;
-font-weight:bold;
+    margin-top:25px;
+    font-size:1.6rem;
+    font-weight:bold;
+}
+
+/* 倒數卡片 */
+.countdown-box{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    margin-top:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.countdown-title{
+    font-size:1.2rem;
+    font-weight:700;
+    color:#0e7490;
+    margin-bottom:10px;
+}
+
+#countdown{
+    font-size:1.8rem;
+    font-weight:bold;
+    color:#ef4444;
 }
 
 .section{
@@ -179,7 +202,15 @@ font-size:1.2rem;
 <div class="badge">
 🚐 包車旅行
 </div>
+  
+<div
+id="countdown"
+class="countdown">
 
+載入中...
+
+</div>
+  
 </div>
 
 <div
