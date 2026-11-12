@@ -188,7 +188,15 @@ font-size:1.2rem;
 <p>
 2026.11.21 - 11.25
 </p>
+<div class="countdown-box">
+    <div class="countdown-title">
+        ✈️ 距離沖繩出發還有
+    </div>
 
+    <div id="countdown">
+        載入中...
+    </div>
+</div>
 <div class="badges">
 
 <div class="badge">
@@ -826,7 +834,39 @@ margin-bottom:15px;
 </details>
 
 </section>
+<script>
+const targetDate = new Date("2026-11-21T04:30:00").getTime();
 
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+    document.getElementById("countdown").innerHTML =
+        `${days}天 ${hours}小時 ${minutes}分 ${seconds}秒`;
+
+    if (distance < 0) {
+        document.getElementById("countdown").innerHTML =
+            "🎉 沖繩之旅出發啦！";
+    }
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
 </body>
 
 </html>
