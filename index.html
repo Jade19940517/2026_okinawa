@@ -11,6 +11,14 @@ content="width=device-width, initial-scale=1.0">
 <title>
 🏝️ Okinawa Family Trip 2026
 </title>
+<meta name="description" content="2026.11.21–11.25 沖繩家族旅行｜航班、行程、景點、美食、住宿一次看">
+<meta name="theme-color" content="#0284c7">
+<meta property="og:type" content="website">
+<meta property="og:title" content="🏝️ Okinawa Family Trip 2026">
+<meta property="og:description" content="2026.11.21–11.25｜13 位家人的沖繩旅行：航班、行程、景點、美食、住宿一次看">
+<meta property="og:image" content="https://jade19940517.github.io/2026_okinawa/images/%E7%80%A8%E9%95%B7%E5%B3%B6.jpg">
+<meta property="og:url" content="https://jade19940517.github.io/2026_okinawa/">
+<meta name="twitter:card" content="summary_large_image">
 
 <style>
 
@@ -263,6 +271,148 @@ font-size:1.2rem;
 .map-btn{margin-top:auto;padding-top:10px;}
 .map-btn a{display:inline-block;background:var(--ocean);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;border-radius:20px;padding:6px 13px;}
 
+
+/* ===== v2：導覽・天氣・住宿・小提醒 ===== */
+html{scroll-behavior:smooth;}
+.section{scroll-margin-top:62px;}
+
+.quick-nav{position:sticky;top:0;z-index:50;background:rgba(245,251,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0;}
+.quick-nav-inner{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;max-width:1100px;margin:auto;}
+.quick-nav-inner::-webkit-scrollbar{display:none;}
+.quick-nav a{flex:none;text-decoration:none;color:#0e7490;background:#fff;border:1px solid #bae6fd;border-radius:20px;padding:6px 13px;font-size:.88rem;font-weight:600;white-space:nowrap;}
+.quick-nav a.active{background:var(--ocean);border-color:var(--ocean);color:#fff;}
+
+.today-badge{display:inline-block;flex:none;white-space:nowrap;background:#ea7a1a;color:#fff;font-size:.72rem;font-weight:700;border-radius:10px;padding:1px 8px;margin-right:8px;vertical-align:middle;}
+.day-card summary{gap:8px;}
+
+.wx-card{background:#fff;border-radius:20px;padding:16px 8px 12px;box-shadow:0 8px 20px rgba(0,0,0,.09);}
+.wx-grid{display:grid;grid-template-columns:repeat(5,1fr);}
+.wx-col{text-align:center;padding:2px 2px;border-right:1px dashed #e2e8f0;}
+.wx-col:last-child{border-right:none;}
+.wx-date{font-weight:700;font-size:.86rem;color:#0f766e;line-height:1.3;}
+.wx-date small{display:block;font-weight:400;font-size:.72rem;color:#64748b;}
+.wx-ico{font-size:1.7rem;margin:6px 0 2px;}
+.wx-temp{font-size:.88rem;font-weight:700;}
+.wx-temp span{color:#cbd5e1;font-weight:400;margin:0 1px;}
+.wx-rain{font-size:.74rem;color:#0e7490;min-height:1.1em;margin-top:2px;}
+.wx-note{margin:10px 8px 0;font-size:.76rem;color:#94a3b8;text-align:center;}
+
+.stay-list{display:grid;gap:16px;}
+.stay-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.09);}
+.stay-photo{display:block;width:100%;height:160px;object-fit:cover;background:#e0f2fe;}
+.stay-body{padding:14px 16px 16px;}
+.stay-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.stay-dates{font-size:.84rem;color:#64748b;}
+.stay-name{margin-top:8px;font-weight:700;font-size:1.1rem;line-height:1.35;}
+.stay-body .map-btn{padding-top:10px;}
+.rooms{margin-top:12px;border-top:1px dashed #e2e8f0;padding-top:6px;}
+.rooms summary{cursor:pointer;list-style:none;font-weight:600;font-size:.92rem;color:#0f766e;padding:8px 0;display:flex;justify-content:space-between;align-items:center;}
+.rooms summary::-webkit-details-marker{display:none;}
+.rooms summary::after{content:"▸";color:var(--ocean);}
+.rooms[open] summary::after{content:"▾";}
+.room-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:4px 0 2px;}
+.room{background:#f0f9ff;border-radius:14px;padding:10px 12px;}
+.room b{display:block;font-size:.82rem;color:#0284c7;margin-bottom:4px;}
+.room span{display:block;font-size:.9rem;line-height:1.55;}
+
+.tips-card{padding:6px 18px 14px;}
+.tips-card summary{font-weight:700;font-size:1rem;padding:14px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.tips-card summary::-webkit-details-marker{display:none;}
+.tips-card summary::after{content:"▸";color:var(--ocean);font-size:1.1rem;}
+.tips-card[open] summary::after{content:"▾";}
+.tips-card[open] summary{border-bottom:1px dashed #e2e8f0;margin-bottom:6px;}
+.tip-block{margin-top:14px;}
+.tip-block h3{font-size:1rem;color:#0284c7;margin-bottom:6px;}
+.tip-block ul{padding-left:1.15rem;}
+.tip-block li{font-size:.9rem;line-height:1.6;margin-bottom:5px;color:#334155;}
+.tip-foot{margin-top:6px;font-size:.78rem;color:#94a3b8;}
+
+
+/* ===== v3：可愛動畫 ===== */
+.hero{position:relative;overflow:hidden;}
+.hero-content{position:relative;z-index:2;animation:hero-in .9s cubic-bezier(.34,1.56,.64,1) both;}
+.hero-deco{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;}
+.cloud{position:absolute;left:0;font-size:3.2rem;opacity:.85;filter:drop-shadow(0 4px 6px rgba(0,0,0,.15));will-change:transform;animation:drift 38s linear infinite;}
+.cloud.c1{top:9%;animation-duration:42s;animation-delay:-14s;}
+.cloud.c2{top:30%;font-size:2.2rem;opacity:.7;animation-duration:30s;animation-delay:-5s;}
+.cloud.c3{top:56%;font-size:2.6rem;opacity:.75;animation-duration:50s;animation-delay:-33s;}
+@keyframes drift{from{transform:translateX(-25vw);}to{transform:translateX(125vw);}}
+.hero-plane{position:absolute;left:0;top:18%;font-size:2rem;opacity:0;will-change:transform;animation:fly 16s ease-in-out 1.5s infinite;}
+@keyframes fly{
+  0%{transform:translate(-15vw,30px) rotate(-6deg);opacity:0;}
+  4%{opacity:1;}
+  30%{transform:translate(50vw,-8px) rotate(2deg);}
+  52%{transform:translate(115vw,-40px) rotate(-4deg);opacity:1;}
+  54%,100%{transform:translate(115vw,-40px);opacity:0;}
+}
+.wave{position:absolute;left:0;bottom:-1px;width:200%;height:46px;will-change:transform;}
+.wave-back path{fill:rgba(245,251,255,.55);}
+.wave-front path{fill:#f5fbff;}
+.wave-back{animation:wave-move 14s linear infinite reverse;height:56px;}
+.wave-front{animation:wave-move 9s linear infinite;}
+@keyframes wave-move{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes hero-in{from{opacity:0;transform:translateY(26px) scale(.94);}to{opacity:1;transform:none;}}
+.badge{animation:pop-in .6s cubic-bezier(.34,1.56,.64,1) backwards;}
+.badge:nth-child(1){animation-delay:.45s;}
+.badge:nth-child(2){animation-delay:.6s;}
+.badge:nth-child(3){animation-delay:.75s;}
+
+/* 倒數：秒數跳一下 */
+#countdown{font-variant-numeric:tabular-nums;}
+.cd-sec{display:inline-block;color:#ea7a1a;min-width:1.35em;animation:cd-pop .5s cubic-bezier(.34,1.56,.64,1);}
+@keyframes cd-pop{0%{transform:scale(.55) translateY(8px);opacity:.25;}60%{transform:scale(1.28);opacity:1;}100%{transform:none;opacity:1;}}
+
+/* 捲動浮現 */
+.js-anim .section{opacity:0;transform:translateY(30px) scale(.97);}
+.js-anim .section.in{opacity:1;transform:none;transition:opacity .55s ease,transform .75s cubic-bezier(.34,1.56,.64,1);}
+.js-anim .section.in .section-title{animation:title-in .7s cubic-bezier(.34,1.56,.64,1) backwards;}
+@keyframes title-in{from{opacity:0;transform:translateX(-22px);}to{opacity:1;transform:none;}}
+.js-anim .section.in .spot-card,
+.js-anim .section.in .food-card,
+.js-anim .section.in .stay-card,
+.js-anim .section.in .wx-card,
+.js-anim .section.in .day-card,
+.js-anim .section.in .tips-card,
+.js-anim .section.in .flight-card{animation:pop-in .65s cubic-bezier(.34,1.56,.64,1) backwards;animation-delay:calc(var(--i,0) * 80ms + 150ms);}
+@keyframes pop-in{
+  0%{opacity:0;transform:translateY(26px) scale(.86) rotate(-2deg);}
+  60%{opacity:1;transform:translateY(-4px) scale(1.03) rotate(.6deg);}
+  100%{opacity:1;transform:none;}
+}
+
+/* 按壓回彈 */
+.spot-card,.food-card,.stay-card,.day-card,.flight-card,.wx-card,.tips-card,.room{transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;}
+@media (hover:hover){
+  .spot-card:hover,.food-card:hover,.stay-card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(2,132,199,.18);}
+}
+.spot-card:active,.food-card:active,.stay-card:active,.room:active{transform:scale(.95);}
+.map-btn a{transition:transform .22s cubic-bezier(.34,1.56,.64,1);}
+.map-btn a:active{transform:scale(.88) rotate(-2deg);}
+.quick-nav a{transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .2s,color .2s;}
+.quick-nav a:active{transform:scale(.88);}
+.quick-nav a.active{animation:nav-pop .4s cubic-bezier(.34,1.56,.64,1);}
+@keyframes nav-pop{0%{transform:scale(.85);}60%{transform:scale(1.1);}100%{transform:none;}}
+
+/* 天氣圖示搖擺 */
+.wx-ico{animation:bob 3.2s ease-in-out infinite;transform-origin:50% 70%;}
+.wx-col:nth-child(2) .wx-ico{animation-delay:-.7s;}
+.wx-col:nth-child(3) .wx-ico{animation-delay:-1.4s;}
+.wx-col:nth-child(4) .wx-ico{animation-delay:-2.1s;}
+.wx-col:nth-child(5) .wx-ico{animation-delay:-2.8s;}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-6px) rotate(5deg);}}
+
+/* 「今天」標籤呼吸 */
+.today-badge{animation:pulse 1.8s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(234,122,26,.55);}50%{box-shadow:0 0 0 7px rgba(234,122,26,0);}}
+
+/* 手機設定「減少動態效果」→ 全部關閉 */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;}
+  .js-anim .section{opacity:1;transform:none;}
+  .hero-deco{display:none;}
+  html{scroll-behavior:auto;}
+}
+
 </style>
 
 </head>
@@ -272,6 +422,15 @@ font-size:1.2rem;
 <!-- Hero -->
 
 <section class="hero">
+<div class="hero-deco" aria-hidden="true">
+  <span class="cloud c1">☁️</span>
+  <span class="cloud c2">☁️</span>
+  <span class="cloud c3">☁️</span>
+  <span class="hero-plane">✈️</span>
+  <svg class="wave wave-back" viewBox="0 0 2400 70" preserveAspectRatio="none"><path d="M0 30 C100.0 4 300.0 56 400 30 C500.0 4 700.0 56 800 30 C900.0 4 1100.0 56 1200 30 C1300.0 4 1500.0 56 1600 30 C1700.0 4 1900.0 56 2000 30 C2100.0 4 2300.0 56 2400 30 V70 H0 Z"/></svg>
+  <svg class="wave wave-front" viewBox="0 0 2400 70" preserveAspectRatio="none"><path d="M0 34 C75.0 12 225.0 56 300 34 C375.0 12 525.0 56 600 34 C675.0 12 825.0 56 900 34 C975.0 12 1125.0 56 1200 34 C1275.0 12 1425.0 56 1500 34 C1575.0 12 1725.0 56 1800 34 C1875.0 12 2025.0 56 2100 34 C2175.0 12 2325.0 56 2400 34 V70 H0 Z"/></svg>
+</div>
+
 
 <div class="hero-content">
 
@@ -311,9 +470,21 @@ Okinawa Family Trip
 
 </section>
 
+<nav class="quick-nav" id="quick-nav" aria-label="快速導覽">
+<div class="quick-nav-inner">
+<a href="#flights">✈️ 航班</a>
+<a href="#weather">🌤️ 天氣</a>
+<a href="#spots">📍 景點</a>
+<a href="#food">🍜 美食</a>
+<a href="#stay">🏨 住宿</a>
+<a href="#itinerary">📅 行程</a>
+<a href="#tips">🧳 提醒</a>
+</div>
+</nav>
+
 <!-- 航班資訊 -->
 
-<section class="section">
+<section class="section" id="flights">
 
 <h2 class="section-title">
 ✈️ 航班資訊
@@ -403,51 +574,28 @@ Okinawa Family Trip
 
 <!-- 五日天氣 -->
 
-<section class="section">
+<section class="section" id="weather">
 
 <h2 class="section-title">
 🌤️ 沖繩五日天氣
 </h2>
 
-<div class="scroll-cards">
-
-<div class="small-card">
-☀️<br><br>
-11/21（六）<br>
-22°~27°
+<div class="wx-card">
+<div class="wx-grid" id="wx-grid">
+<div class="wx-col"><div class="wx-date">11/21<small>（六）</small></div><div class="wx-ico">☀️</div><div class="wx-temp">22°<span>/</span>27°</div><div class="wx-rain"></div></div>
+<div class="wx-col"><div class="wx-date">11/22<small>（日）</small></div><div class="wx-ico">🌤️</div><div class="wx-temp">21°<span>/</span>26°</div><div class="wx-rain"></div></div>
+<div class="wx-col"><div class="wx-date">11/23<small>（一）</small></div><div class="wx-ico">☁️</div><div class="wx-temp">21°<span>/</span>25°</div><div class="wx-rain"></div></div>
+<div class="wx-col"><div class="wx-date">11/24<small>（二）</small></div><div class="wx-ico">🌦️</div><div class="wx-temp">20°<span>/</span>24°</div><div class="wx-rain"></div></div>
+<div class="wx-col"><div class="wx-date">11/25<small>（三）</small></div><div class="wx-ico">☀️</div><div class="wx-temp">21°<span>/</span>25°</div><div class="wx-rain"></div></div>
 </div>
-
-<div class="small-card">
-🌤️<br><br>
-11/22（日）<br>
-21°~26°
-</div>
-
-<div class="small-card">
-☁️<br><br>
-11/23（一）<br>
-21°~25°
-</div>
-
-<div class="small-card">
-🌦️<br><br>
-11/24（二）<br>
-20°~24°
-</div>
-
-<div class="small-card">
-☀️<br><br>
-11/25（三）<br>
-21°~25°
-</div>
-
+<div class="wx-note" id="wx-note">⏳ 預報載入中…（先顯示手動整理的參考值）</div>
 </div>
 
 </section>
 
 <!-- 景點 -->
 
-<section class="section">
+<section class="section" id="spots">
 
 <h2 class="section-title">
 📍 必訪景點
@@ -581,7 +729,7 @@ Okinawa Family Trip
 
 <!-- 美食 -->
 
-<section class="section">
+<section class="section" id="food">
 
 <h2 class="section-title">
 🍜 美食推薦
@@ -668,187 +816,50 @@ Okinawa Family Trip
 
 <!-- 住宿 -->
 
-<section class="section">
+<!-- 住宿與房間分配 -->
+
+<section class="section" id="stay">
 
 <h2 class="section-title">
-🏨 住宿資訊
+🏨 住宿與房間分配
 </h2>
 
-<div class="scroll-cards">
+<div class="stay-list">
 
-<div class="small-card">
-
-<img
-src="images/HOTEL HAABESU OKINAWA-01.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-HOTEL HAABESU
-
+<div class="stay-card">
+  <img class="stay-photo" src="images/HOTEL%20HAABESU%20OKINAWA-01.jpg" alt="HOTEL HAABESU" loading="lazy">
+  <div class="stay-body">
+    <div class="stay-top"><span class="chip">前兩晚</span><span class="stay-dates">📅 11/21 – 11/23</span></div>
+    <div class="stay-name">HOTEL HAABESU</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=HOTEL%20HAABESU%20OKINAWA" target="_blank" rel="noopener">📍 地圖</a></div>
+    <details class="rooms">
+      <summary>🛏️ 房間分配（3 間）</summary>
+      <div class="room-grid">
+<div class="room"><b>Room 1</b><span>二阿姨二姨丈</span><span>小阿姨小姨丈</span></div>
+<div class="room"><b>Room 2</b><span>大姨</span><span>明寶</span><span>小茜</span><span>吳小弟</span></div>
+<div class="room"><b>Room 3</b><span>佩妏</span><span>小琪</span><span>易宣</span><span>雅涵</span><span>蘇小弟</span></div>
+      </div>
+    </details>
+  </div>
 </div>
 
-<div class="small-card">
-
-<img
-src="images/Daiwa Roynet Hotel Naha Kokusaidori-01.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-Daiwa Roynet
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- 房間分配 -->
-
-<section class="section">
-
-<h2 class="section-title">
-🏠 房間分配
-</h2>
-
-<h3 style="
-color:#0284c7;
-margin-bottom:15px;
-">
-📍 前兩晚｜HOTEL HAABESU
-</h3>
-
-<div class="scroll-cards">
-
-<div class="small-card">
-
-<strong>Room 1</strong>
-
-<br><br>
-
-二阿姨二姨丈
-<br>
-小阿姨小姨丈
-
-</div>
-
-<div class="small-card">
-
-<strong>Room 2</strong>
-
-<br><br>
-
-大姨
-<br>
-明寶
-<br>
-小茜
-<br>
-吳小弟
-
-</div>
-
-<div class="small-card">
-
-<strong>Room 3</strong>
-
-<br><br>
-
-佩妏
-<br>
-小琪
-<br>
-易宣
-<br>
-雅涵
-<br>
-蘇小弟
-
-</div>
-
-</div>
-
-<br>
-
-<h3 style="
-color:#0284c7;
-margin-bottom:15px;
-">
-📍 後兩晚｜Daiwa Roynet
-</h3>
-
-<div class="scroll-cards">
-
-<div class="small-card">
-
-<strong>Room 1</strong>
-
-<br><br>
-
-二阿姨二姨丈
-
-</div>
-
-<div class="small-card">
-
-<strong>Room 2</strong>
-
-<br><br>
-
-小阿姨小姨丈
-
-</div>
-
-<div class="small-card">
-
-<strong>Room 3</strong>
-
-<br><br>
-
-明寶
-<br>
-小茜
-<br>
-吳小弟
-
-</div>
-
-<div class="small-card">
-
-<strong>Room 4</strong>
-
-<br><br>
-
-易宣
-<br>
-雅涵
-<br>
-蘇小弟
-
-</div>
-
-<div class="small-card">
-
-<strong>Room 5</strong>
-
-<br><br>
-
-大姨
-<br>
-佩妏
-<br>
-小琪
-
+<div class="stay-card">
+  <img class="stay-photo" src="images/Daiwa%20Roynet%20Hotel%20Naha%20Kokusaidori-01.jpg" alt="Daiwa Roynet Hotel Naha Kokusaidori" loading="lazy">
+  <div class="stay-body">
+    <div class="stay-top"><span class="chip">後兩晚</span><span class="stay-dates">📅 11/23 – 11/25</span></div>
+    <div class="stay-name">Daiwa Roynet Hotel Naha Kokusaidori</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20Naha%20Kokusaidori" target="_blank" rel="noopener">📍 地圖</a></div>
+    <details class="rooms">
+      <summary>🛏️ 房間分配（5 間）</summary>
+      <div class="room-grid">
+<div class="room"><b>Room 1</b><span>二阿姨二姨丈</span></div>
+<div class="room"><b>Room 2</b><span>小阿姨小姨丈</span></div>
+<div class="room"><b>Room 3</b><span>明寶</span><span>小茜</span><span>吳小弟</span></div>
+<div class="room"><b>Room 4</b><span>易宣</span><span>雅涵</span><span>蘇小弟</span></div>
+<div class="room"><b>Room 5</b><span>大姨</span><span>佩妏</span><span>小琪</span></div>
+      </div>
+    </details>
+  </div>
 </div>
 
 </div>
@@ -858,13 +869,13 @@ margin-bottom:15px;
 
 <!-- 每日行程 -->
 
-<section class="section">
+<section class="section" id="itinerary">
 
 <h2 class="section-title">
 📅 每日行程
 </h2>
 
-<details open class="card day-card">
+<details open class="card day-card" data-day="1">
 <summary>🏝️ Day 1｜11/21（六）抵達沖繩</summary>
 <div class="timeline">
   <div class="stop"><div class="time">12:15</div><div class="dot"></div><div class="body"><div class="title">🛬 抵達那霸機場</div><span class="tag">第一批家人</span></div></div>
@@ -882,7 +893,7 @@ margin-bottom:15px;
 </div>
 </details>
 
-<details class="card day-card">
+<details class="card day-card" data-day="2">
 <summary>🌊 Day 2｜11/22（日）北部海洋之旅</summary>
 <div class="timeline">
   <div class="stop"><div class="time">09:00</div><div class="dot"></div><div class="body"><div class="title">🚌 民宿出發</div></div></div>
@@ -903,7 +914,7 @@ margin-bottom:15px;
 <div class="callout">⚠️ 這天包車只到晚上 19 點，可付超時費延到 21 點，視當日情況調整是否去美國村。</div>
 </details>
 
-<details class="card day-card">
+<details class="card day-card" data-day="3">
 <summary>🏙️ Day 3｜11/23（一）浦添・那霸市區</summary>
 <div class="timeline">
   <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 民宿出發</div></div></div>
@@ -922,7 +933,7 @@ margin-bottom:15px;
 </div>
 </details>
 
-<details class="card day-card">
+<details class="card day-card" data-day="4">
 <summary>🛍️ Day 4｜11/24（二）南部文化體驗</summary>
 <div class="timeline">
   <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 飯店出發</div></div></div>
@@ -937,7 +948,7 @@ margin-bottom:15px;
 </div>
 </details>
 
-<details class="card day-card">
+<details class="card day-card" data-day="5">
 <summary>✈️ Day 5｜11/25（三）回台灣</summary>
 <div class="timeline">
   <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 飯店出發</div></div></div>
@@ -953,38 +964,229 @@ margin-bottom:15px;
 </details>
 
 </section>
+<section class="section" id="tips">
+
+<h2 class="section-title">
+🧳 旅遊小提醒
+</h2>
+
+<details class="card tips-card">
+<summary>點開查看：護照・日幣・常備藥品・退稅</summary>
+
+<div class="tip-block">
+<h3>🛂 護照</h3>
+<ul>
+<li>出發前確認護照效期，建議剩餘 6 個月以上</li>
+<li>每人隨身帶護照正本，另外拍照或影印一份備份</li>
+<li>13 個人一起行動，出發前在群組互相提醒，確認每個人都有帶</li>
+<li>建議出發前先在 Visit Japan Web 完成入境與海關申報，到了日本掃 QR Code 通關比較快</li>
+</ul>
+</div>
+
+<div class="tip-block">
+<h3>💴 日幣</h3>
+<ul>
+<li>提早在台灣換好日幣現金，部分小店、市場、停車場只收現金</li>
+<li>信用卡與行動支付多數店家可用，出發前先確認卡片的海外刷卡手續費</li>
+<li>準備一些百圓、五百圓零錢，自動販賣機和投幣式置物櫃常會用到</li>
+</ul>
+</div>
+
+<div class="tip-block">
+<h3>💊 常備藥品</h3>
+<ul>
+<li>感冒、腸胃、止痛退燒、過敏藥，另外帶 OK 繃和暈車藥（Day 2 車程較長）</li>
+<li>慢性病用藥帶原包裝，並準備好藥名清單</li>
+<li>部分含偽麻黃鹼等成分的感冒藥在日本受管制，出發前先確認成分，不確定的藥品不要帶</li>
+</ul>
+</div>
+
+<div class="tip-block">
+<h3>🧾 退稅（2026/11/1 起新制）</h3>
+<ul>
+<li>結帳時先付含稅價，出境時確認後才退款，不再當場免稅</li>
+<li>同一天、同一家免稅店，未稅合計滿 5,000 日圓才能辦；購物時要出示護照</li>
+<li>購買後 90 天內離境即可</li>
+<li>在那霸機場要先辦退稅確認，再報到托運：用自助機台掃護照，綠色代表完成，紅色要把商品帶去海關檢查，所以退稅商品不要先托運</li>
+<li>在日本吃掉、用掉、送人或沒帶出境的商品無法退稅；同一張收據只要有一件沒帶出境，整張都不能退</li>
+<li>Day 5 預計 14:10 到機場、16:45 起飛，建議先處理退稅再去報到</li>
+</ul>
+<p class="tip-foot">依 2026 年 11 月公開資訊整理，實際請以店家與海關公告為準。</p>
+</div>
+
+</details>
+
+</section>
+
 <script>
-const targetDate = new Date("2026-11-21T04:30:00").getTime();
+(function () {
+  var TZ = 8 * 3600 * 1000; // 台灣時間 UTC+8
+  var FIRST_FLIGHT = Date.parse("2026-11-21T09:45:00+08:00"); // CI310 起飛
+  var DAYS = [
+    { d: "2026-11-21", t: "抵達沖繩" },
+    { d: "2026-11-22", t: "北部海洋之旅" },
+    { d: "2026-11-23", t: "浦添・那霸市區" },
+    { d: "2026-11-24", t: "南部文化體驗" },
+    { d: "2026-11-25", t: "回台灣" }
+  ];
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+  // 測試用：網址加 ?now=2026-11-22T10:00:00+08:00 可模擬時間
+  function now() {
+    try {
+      var p = new URLSearchParams(location.search).get("now");
+      if (p && !isNaN(Date.parse(p))) return Date.parse(p);
+    } catch (e) {}
+    return Date.now();
+  }
+  function twDate(ms) { return new Date(ms + TZ).toISOString().slice(0, 10); }
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60))
-        / (1000 * 60)
-    );
-    const seconds = Math.floor(
-        (distance % (1000 * 60))
-        / 1000
-    );
+  var el = document.getElementById("countdown");
+  var ttl = document.querySelector(".countdown-title");
+  var dayIdx = -1;
 
-    document.getElementById("countdown").innerHTML =
-        `${days}天 ${hours}小時 ${minutes}分 ${seconds}秒`;
-
-    if (distance < 0) {
-        document.getElementById("countdown").innerHTML =
-            "🎉 沖繩之旅出發啦！";
+  function tick() {
+    var t = now(), dist = FIRST_FLIGHT - t;
+    if (dist > 0) {
+      var days = Math.floor(dist / 86400000);
+      var hrs = Math.floor((dist % 86400000) / 3600000);
+      var min = Math.floor((dist % 3600000) / 60000);
+      var sec = Math.floor((dist % 60000) / 1000);
+      ttl.textContent = "沖繩出發倒數";
+      el.innerHTML = days + "天 " + pad(hrs) + "小時 " + pad(min) + "分 <span class=\"cd-sec\">" + pad(sec) + "</span>秒";
+      return;
     }
-}
+    var today = twDate(t);
+    var idx = -1;
+    for (var i = 0; i < DAYS.length; i++) if (DAYS[i].d === today) idx = i;
+    if (idx >= 0) {
+      ttl.textContent = "旅程進行中";
+      el.textContent = "Day " + (idx + 1) + " / 5｜" + DAYS[idx].t;
+    } else {
+      ttl.textContent = "旅程結束";
+      el.textContent = "🏡 歡迎回家，謝謝大家！";
+    }
+    dayIdx = idx;
+  }
+  tick();
+  setInterval(tick, 1000);
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+  // 旅程期間：自動展開「今天」的行程
+  function openToday() {
+    if (dayIdx < 0) return;
+    var cards = document.querySelectorAll(".day-card");
+    for (var i = 0; i < cards.length; i++) {
+      var isToday = cards[i].getAttribute("data-day") === String(dayIdx + 1);
+      if (isToday) {
+        cards[i].setAttribute("open", "");
+        var sm = cards[i].querySelector("summary");
+        if (sm && !sm.querySelector(".today-badge")) {
+          var b = document.createElement("span");
+          b.className = "today-badge";
+          b.textContent = "今天";
+          sm.insertBefore(b, sm.firstChild);
+        }
+      } else {
+        cards[i].removeAttribute("open");
+      }
+    }
+  }
+  openToday();
+
+  // 天氣：自動抓那霸預報，失敗就保留手動值
+  var WD = ["日", "一", "二", "三", "四", "五", "六"];
+  function icon(c) {
+    if (c === 0) return "☀️";
+    if (c <= 2) return "🌤️";
+    if (c === 3) return "☁️";
+    if (c <= 48) return "🌫️";
+    if (c <= 57) return "🌦️";
+    if (c <= 67) return "🌧️";
+    if (c <= 77) return "🌨️";
+    if (c <= 82) return "🌦️";
+    if (c <= 86) return "🌨️";
+    return "⛈️";
+  }
+  function loadWeather() {
+    var note = document.getElementById("wx-note");
+    var url = "https://api.open-meteo.com/v1/forecast?latitude=26.2124&longitude=127.6809" +
+      "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
+      "&timezone=Asia%2FTokyo&start_date=2026-11-21&end_date=2026-11-25";
+    var ctrl = ("AbortController" in window) ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+    fetch(url, ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (j) {
+        clearTimeout(timer);
+        var d = j.daily;
+        if (!d || !d.time || d.time.length < 5) throw new Error("no data");
+        var cols = document.querySelectorAll("#wx-grid .wx-col");
+        for (var i = 0; i < 5 && i < cols.length; i++) {
+          var dt = new Date(d.time[i] + "T00:00:00Z");
+          var mm = pad(dt.getUTCMonth() + 1), dd = pad(dt.getUTCDate());
+          cols[i].querySelector(".wx-date").innerHTML = mm + "/" + dd + "<small>（" + WD[dt.getUTCDay()] + "）</small>";
+          cols[i].querySelector(".wx-ico").textContent = icon(d.weather_code[i]);
+          cols[i].querySelector(".wx-temp").innerHTML = Math.round(d.temperature_2m_min[i]) + "°<span>/</span>" + Math.round(d.temperature_2m_max[i]) + "°";
+          var p = d.precipitation_probability_max ? d.precipitation_probability_max[i] : null;
+          cols[i].querySelector(".wx-rain").textContent = (p === null || p === undefined) ? "" : "💧" + p + "%";
+        }
+        note.textContent = "✅ 即時預報（Open-Meteo），每次開啟自動更新";
+      })
+      .catch(function () {
+        clearTimeout(timer);
+        note.textContent = "ℹ️ 目前無法取得即時預報，顯示的是手動整理的參考值";
+      });
+  }
+  loadWeather();
+
+  // 快速導覽：標示目前所在區塊
+  var links = document.querySelectorAll("#quick-nav a");
+  var map = {};
+  for (var k = 0; k < links.length; k++) map[links[k].getAttribute("href").slice(1)] = links[k];
+  var nav = document.querySelector("#quick-nav .quick-nav-inner");
+  function setActive(id) {
+    for (var key in map) map[key].classList.toggle("active", key === id);
+    var a = map[id];
+    if (a && nav) nav.scrollTo({ left: a.offsetLeft - 16, behavior: "smooth" });
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    Object.keys(map).forEach(function (id) {
+      var sec = document.getElementById(id);
+      if (sec) io.observe(sec);
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var reduce = false;
+  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  if (reduce || !("IntersectionObserver" in window)) return; // 不支援或使用者不要動畫：維持全部直接顯示
+  var root = document.documentElement;
+  var secs = document.querySelectorAll(".section");
+  for (var i = 0; i < secs.length; i++) {
+    var kids = secs[i].querySelectorAll(".spot-card,.food-card,.stay-card,.day-card,.flight-card");
+    for (var j = 0; j < kids.length; j++) kids[j].style.setProperty("--i", Math.min(j, 6));
+  }
+  root.classList.add("js-anim");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.06, rootMargin: "0px 0px -6% 0px" });
+  for (var k = 0; k < secs.length; k++) io.observe(secs[k]);
+  // 保險：若 3 秒後仍有區塊沒出現（例如瀏覽器異常），直接全部顯示
+  setTimeout(function () {
+    var rest = document.querySelectorAll(".section:not(.in)");
+    for (var m = 0; m < rest.length; m++) {
+      var r = rest[m].getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.2 && r.bottom > 0) rest[m].classList.add("in");
+    }
+  }, 3000);
+})();
 </script>
 </body>
 
