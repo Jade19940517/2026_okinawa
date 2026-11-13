@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
-
 <title>
 🏝️ Okinawa Family Trip 2026
 </title>
@@ -19,484 +15,46 @@ content="width=device-width, initial-scale=1.0">
 <meta property="og:image" content="https://jade19940517.github.io/2026_okinawa/images/%E7%80%A8%E9%95%B7%E5%B3%B6.jpg">
 <meta property="og:url" content="https://jade19940517.github.io/2026_okinawa/">
 <meta name="twitter:card" content="summary_large_image">
-
-<style>
-
-:root{
---ocean:#0284c7;
---sky:#e0f7ff;
---card:#ffffff;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:"Microsoft JhengHei",sans-serif;
-background:#f5fbff;
-color:#1e293b;
-line-height:1.6;
-}
-
-.hero{
-height:70vh;
-background:
-linear-gradient(
-rgba(0,0,0,.35),
-rgba(0,0,0,.45)
-),
-url('images/瀨長島.jpg');
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-padding:20px;
-}
-
-.hero-content{
-max-width:700px;
-}
-
-.hero h1{
-    font-size:1.6rem;
-    font-weight:700;
-    line-height:1.2;
-    margin-bottom:12px;
-    white-space:nowrap;
-}
-
-.hero p{
-font-size:1.1rem;
-margin-bottom:12px;
-}
-
-.badges{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:10px;
-margin-top:15px;
-}
-
-.badge{
-background:rgba(255,255,255,.2);
-padding:8px 12px;
-border-radius:30px;
-backdrop-filter:blur(8px);
-}
-
-.countdown{
-    margin-top:25px;
-    font-size:1.6rem;
-    font-weight:bold;
-}
-
-/* 倒數卡片 */
-.countdown-box{
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(12px);
-    border-radius:28px;
-    padding:24px;
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-}
-
-.countdown-title{
-    font-size:1.2rem;
-    font-weight:700;
-    color:#0e7490;
-    margin-bottom:10px;
-}
-
-#countdown{
-    font-size:1.3rem;
-    font-weight:bold;
-    color:#0f766e;
-}
-
-.section{
-padding:40px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.card{
-background:white;
-border-radius:20px;
-padding:20px;
-box-shadow:
-0 10px 25px
-rgba(0,0,0,.08);
-margin-bottom:20px;
-}
-.flight-card{
-    background:white;
-    border-radius:22px;
-    padding:20px;
-    margin-bottom:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-.china-airlines{
-    border-left:5px solid #0284c7;
-}
-
-.starlux{
-    border-left:5px solid #c68a28;
-}
-
-.return-flight{
-    border-left:5px solid #0f766e;
-}
-
-.flight-header{
-    font-size:1rem;
-    font-weight:700;
-    color:#0284c7;
-    margin-bottom:10px;
-}
-
-.flight-airline{
-    font-size:1.2rem;
-    font-weight:700;
-    margin-bottom:5px;
-}
-
-.flight-route{
-    color:#64748b;
-    margin-bottom:8px;
-}
-
-.flight-time{
-    font-size:1.5rem;
-    font-weight:bold;
-    color:#0f766e;
-    margin-bottom:12px;
-}
-
-.flight-note{
-    background:#f0fdfa;
-    padding:12px;
-    border-radius:12px;
-    color:#0f766e;
-}
-.scroll-cards{
-display:flex;
-overflow-x:auto;
-gap:15px;
-padding-bottom:10px;
-}
-
-.scroll-cards::-webkit-scrollbar{
-display:none;
-}
-
-.small-card{
-min-width:180px;
-background:white;
-padding:18px;
-border-radius:18px;
-box-shadow:
-0 5px 15px
-rgba(0,0,0,.08);
-text-align:center;
-}
-
-.section-title{
-font-size:28px;
-color:#0369a1;
-margin-bottom:20px;
-}
-
-@media(max-width:768px){
-
-.hero{
-height:70vh;
-}
-
-.hero h1{
-font-size:2rem;
-}
-
-.countdown{
-font-size:1.2rem;
-}
-
-}
-
-
-/* 每日行程時間軸 */
-.day-card{padding:6px 18px;}
-.day-card summary{font-weight:700;font-size:1.02rem;padding:14px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
-.day-card summary::-webkit-details-marker{display:none;}
-.day-card summary::after{content:"▾";color:var(--ocean);font-size:1.1rem;}
-.day-card:not([open]) summary::after{content:"▸";}
-.day-card[open] summary{border-bottom:1px dashed #e2e8f0;margin-bottom:14px;}
-.timeline{position:relative;padding:4px 0 14px;}
-.timeline::before{content:"";position:absolute;left:62px;top:8px;bottom:22px;width:3px;background:linear-gradient(#bae6fd,var(--ocean),#bae6fd);border-radius:3px;}
-.stop{position:relative;display:flex;margin-bottom:4px;}
-.time{width:52px;flex:none;text-align:right;font-weight:700;font-size:.95rem;color:#0f766e;padding-top:1px;font-variant-numeric:tabular-nums;}
-.time.none{color:#cbd5e1;font-weight:400;}
-.dot{position:absolute;left:55px;top:5px;width:17px;height:17px;border-radius:50%;background:#fff;border:4px solid var(--ocean);}
-.stop.meal .dot{border-color:#ea7a1a;}
-.stop.end .dot{border-color:#0f766e;background:#0f766e;}
-.stop .body{margin-left:30px;padding-bottom:8px;flex:1;}
-.stop .title{font-weight:600;font-size:1rem;}
-.stop.meal .title{color:#b45309;}
-.tag{display:inline-block;margin:5px 6px 0 0;background:#ecfeff;color:#0e7490;border-radius:8px;padding:3px 9px;font-size:.8rem;}
-.tag.warn{background:#fef2f2;color:#b91c1c;}
-.tag.food{background:#fff7ed;color:#c2410c;}
-.drive{display:flex;margin:2px 0 6px;}
-.drive span{margin-left:82px;background:#f1f5f9;color:#64748b;font-size:.78rem;border-radius:20px;padding:2px 10px;}
-.callout{margin:6px 0 12px;background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:10px 12px;font-size:.85rem;}
-
-
-/* 景點・美食 橫向滑動卡片 */
-.spot-scroll,.food-scroll{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch;}
-.spot-scroll::-webkit-scrollbar,.food-scroll::-webkit-scrollbar{display:none;}
-.spot-card,.food-card{flex:none;width:210px;scroll-snap-align:start;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.09);display:flex;flex-direction:column;}
-.spot-photo,.food-photo{display:block;width:100%;height:130px;object-fit:cover;background:#e0f2fe;}
-.spot-body,.food-body{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1;}
-.spot-name,.food-name{font-weight:700;font-size:1.02rem;line-height:1.35;}
-.spot-meta,.food-meta{margin-top:6px;}
-.spot-desc{margin-top:8px;font-size:.84rem;color:#475569;line-height:1.5;}
-.chip{display:inline-block;background:#ecfeff;color:#0e7490;border-radius:8px;padding:2px 8px;font-size:.78rem;margin-right:5px;}
-.chip.soft{background:#f1f5f9;color:#64748b;}
-.chip.warm{background:#fff7ed;color:#c2410c;}
-.map-btn{margin-top:auto;padding-top:10px;}
-.map-btn a{display:inline-block;background:var(--ocean);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;border-radius:20px;padding:6px 13px;}
-
-
-/* ===== v2：導覽・天氣・住宿・小提醒 ===== */
-html{scroll-behavior:smooth;}
-.section{scroll-margin-top:62px;}
-
-.quick-nav{position:sticky;top:0;z-index:50;background:rgba(245,251,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0;}
-.quick-nav-inner{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;max-width:1100px;margin:auto;}
-.quick-nav-inner::-webkit-scrollbar{display:none;}
-.quick-nav a{flex:none;text-decoration:none;color:#0e7490;background:#fff;border:1px solid #bae6fd;border-radius:20px;padding:6px 13px;font-size:.88rem;font-weight:600;white-space:nowrap;}
-.quick-nav a.active{background:var(--ocean);border-color:var(--ocean);color:#fff;}
-
-.today-badge{display:inline-block;flex:none;white-space:nowrap;background:#ea7a1a;color:#fff;font-size:.72rem;font-weight:700;border-radius:10px;padding:1px 8px;margin-right:8px;vertical-align:middle;}
-.day-card summary{gap:8px;}
-
-.wx-card{background:#fff;border-radius:20px;padding:16px 8px 12px;box-shadow:0 8px 20px rgba(0,0,0,.09);}
-.wx-grid{display:grid;grid-template-columns:repeat(5,1fr);}
-.wx-col{text-align:center;padding:2px 2px;border-right:1px dashed #e2e8f0;}
-.wx-col:last-child{border-right:none;}
-.wx-date{font-weight:700;font-size:.86rem;color:#0f766e;line-height:1.3;}
-.wx-date small{display:block;font-weight:400;font-size:.72rem;color:#64748b;}
-.wx-ico{font-size:1.7rem;margin:6px 0 2px;}
-.wx-temp{font-size:.88rem;font-weight:700;}
-.wx-temp span{color:#cbd5e1;font-weight:400;margin:0 1px;}
-.wx-rain{font-size:.74rem;color:#0e7490;min-height:1.1em;margin-top:2px;}
-.wx-note{margin:10px 8px 0;font-size:.76rem;color:#94a3b8;text-align:center;}
-
-.stay-list{display:grid;gap:16px;}
-.stay-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.09);}
-.stay-photo{display:block;width:100%;height:160px;object-fit:cover;background:#e0f2fe;}
-.stay-body{padding:14px 16px 16px;}
-.stay-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.stay-dates{font-size:.84rem;color:#64748b;}
-.stay-name{margin-top:8px;font-weight:700;font-size:1.1rem;line-height:1.35;}
-.stay-body .map-btn{padding-top:10px;}
-.rooms{margin-top:12px;border-top:1px dashed #e2e8f0;padding-top:6px;}
-.rooms summary{cursor:pointer;list-style:none;font-weight:600;font-size:.92rem;color:#0f766e;padding:8px 0;display:flex;justify-content:space-between;align-items:center;}
-.rooms summary::-webkit-details-marker{display:none;}
-.rooms summary::after{content:"▸";color:var(--ocean);}
-.rooms[open] summary::after{content:"▾";}
-.room-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:4px 0 2px;}
-.room{background:#f0f9ff;border-radius:14px;padding:10px 12px;}
-.room b{display:block;font-size:.82rem;color:#0284c7;margin-bottom:4px;}
-.room span{display:block;font-size:.9rem;line-height:1.55;}
-
-.tips-card{padding:6px 18px 14px;}
-.tips-card summary{font-weight:700;font-size:1rem;padding:14px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;}
-.tips-card summary::-webkit-details-marker{display:none;}
-.tips-card summary::after{content:"▸";color:var(--ocean);font-size:1.1rem;}
-.tips-card[open] summary::after{content:"▾";}
-.tips-card[open] summary{border-bottom:1px dashed #e2e8f0;margin-bottom:6px;}
-.tip-block{margin-top:14px;}
-.tip-block h3{font-size:1rem;color:#0284c7;margin-bottom:6px;}
-.tip-block ul{padding-left:1.15rem;}
-.tip-block li{font-size:.9rem;line-height:1.6;margin-bottom:5px;color:#334155;}
-.tip-foot{margin-top:6px;font-size:.78rem;color:#94a3b8;}
-
-
-/* ===== v3：可愛動畫 ===== */
-.hero{position:relative;overflow:hidden;}
-.hero-content{position:relative;z-index:2;animation:hero-in .9s cubic-bezier(.34,1.56,.64,1) both;}
-.hero-deco{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;}
-.cloud{position:absolute;left:0;font-size:3.2rem;opacity:.85;filter:drop-shadow(0 4px 6px rgba(0,0,0,.15));will-change:transform;animation:drift 38s linear infinite;}
-.cloud.c1{top:9%;animation-duration:42s;animation-delay:-14s;}
-.cloud.c2{top:30%;font-size:2.2rem;opacity:.7;animation-duration:30s;animation-delay:-5s;}
-.cloud.c3{top:56%;font-size:2.6rem;opacity:.75;animation-duration:50s;animation-delay:-33s;}
-@keyframes drift{from{transform:translateX(-25vw);}to{transform:translateX(125vw);}}
-.hero-plane{position:absolute;left:0;top:18%;font-size:2rem;opacity:0;will-change:transform;animation:fly 16s ease-in-out 1.5s infinite;}
-@keyframes fly{
-  0%{transform:translate(-15vw,30px) rotate(-6deg);opacity:0;}
-  4%{opacity:1;}
-  30%{transform:translate(50vw,-8px) rotate(2deg);}
-  52%{transform:translate(115vw,-40px) rotate(-4deg);opacity:1;}
-  54%,100%{transform:translate(115vw,-40px);opacity:0;}
-}
-.wave{position:absolute;left:0;bottom:-1px;width:200%;height:46px;will-change:transform;}
-.wave-back path{fill:rgba(245,251,255,.55);}
-.wave-front path{fill:#f5fbff;}
-.wave-back{animation:wave-move 14s linear infinite reverse;height:56px;}
-.wave-front{animation:wave-move 9s linear infinite;}
-@keyframes wave-move{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-@keyframes hero-in{from{opacity:0;transform:translateY(26px) scale(.94);}to{opacity:1;transform:none;}}
-.badge{animation:pop-in .6s cubic-bezier(.34,1.56,.64,1) backwards;}
-.badge:nth-child(1){animation-delay:.45s;}
-.badge:nth-child(2){animation-delay:.6s;}
-.badge:nth-child(3){animation-delay:.75s;}
-
-/* 倒數：秒數跳一下 */
-#countdown{font-variant-numeric:tabular-nums;}
-.cd-sec{display:inline-block;color:#ea7a1a;min-width:1.35em;animation:cd-pop .5s cubic-bezier(.34,1.56,.64,1);}
-@keyframes cd-pop{0%{transform:scale(.55) translateY(8px);opacity:.25;}60%{transform:scale(1.28);opacity:1;}100%{transform:none;opacity:1;}}
-
-/* 捲動浮現 */
-.js-anim .section{opacity:0;transform:translateY(30px) scale(.97);}
-.js-anim .section.in{opacity:1;transform:none;transition:opacity .55s ease,transform .75s cubic-bezier(.34,1.56,.64,1);}
-.js-anim .section.in .section-title{animation:title-in .7s cubic-bezier(.34,1.56,.64,1) backwards;}
-@keyframes title-in{from{opacity:0;transform:translateX(-22px);}to{opacity:1;transform:none;}}
-.js-anim .section.in .spot-card,
-.js-anim .section.in .food-card,
-.js-anim .section.in .stay-card,
-.js-anim .section.in .wx-card,
-.js-anim .section.in .day-card,
-.js-anim .section.in .tips-card,
-.js-anim .section.in .flight-card{animation:pop-in .65s cubic-bezier(.34,1.56,.64,1) backwards;animation-delay:calc(var(--i,0) * 80ms + 150ms);}
-@keyframes pop-in{
-  0%{opacity:0;transform:translateY(26px) scale(.86) rotate(-2deg);}
-  60%{opacity:1;transform:translateY(-4px) scale(1.03) rotate(.6deg);}
-  100%{opacity:1;transform:none;}
-}
-
-/* 按壓回彈 */
-.spot-card,.food-card,.stay-card,.day-card,.flight-card,.wx-card,.tips-card,.room{transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;}
-@media (hover:hover){
-  .spot-card:hover,.food-card:hover,.stay-card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(2,132,199,.18);}
-}
-.spot-card:active,.food-card:active,.stay-card:active,.room:active{transform:scale(.95);}
-.map-btn a{transition:transform .22s cubic-bezier(.34,1.56,.64,1);}
-.map-btn a:active{transform:scale(.88) rotate(-2deg);}
-.quick-nav a{transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .2s,color .2s;}
-.quick-nav a:active{transform:scale(.88);}
-.quick-nav a.active{animation:nav-pop .4s cubic-bezier(.34,1.56,.64,1);}
-@keyframes nav-pop{0%{transform:scale(.85);}60%{transform:scale(1.1);}100%{transform:none;}}
-
-/* 天氣圖示搖擺 */
-.wx-ico{animation:bob 3.2s ease-in-out infinite;transform-origin:50% 70%;}
-.wx-col:nth-child(2) .wx-ico{animation-delay:-.7s;}
-.wx-col:nth-child(3) .wx-ico{animation-delay:-1.4s;}
-.wx-col:nth-child(4) .wx-ico{animation-delay:-2.1s;}
-.wx-col:nth-child(5) .wx-ico{animation-delay:-2.8s;}
-@keyframes bob{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-6px) rotate(5deg);}}
-
-/* 「今天」標籤呼吸 */
-.today-badge{animation:pulse 1.8s ease-in-out infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(234,122,26,.55);}50%{box-shadow:0 0 0 7px rgba(234,122,26,0);}}
-
-/* 手機設定「減少動態效果」→ 全部關閉 */
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none !important;transition:none !important;}
-  .js-anim .section{opacity:1;transform:none;}
-  .hero-deco{display:none;}
-  html{scroll-behavior:auto;}
-}
-
-
-/* 公寓：每戶 → 房間 → 床型 */
-.unit-list{padding:4px 0 2px;}
-.unit{background:#f0f9ff;border:2px solid #bae6fd;border-radius:18px;padding:12px;margin-bottom:12px;}
-.unit-head{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;font-weight:700;color:#0284c7;font-size:1rem;}
-.unit-tag{font-size:.74rem;font-weight:600;background:#fff;color:#0e7490;border-radius:8px;padding:2px 8px;}
-.uroom{background:#fff;border-radius:14px;padding:10px 12px;margin-top:8px;}
-.uroom-head{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
-.uroom-head b{font-size:.9rem;color:#0f766e;}
-.uroom .bed{font-size:.76rem;color:#0e7490;background:#ecfeff;border-radius:8px;padding:2px 8px;}
-.unit-people{display:flex;flex-wrap:wrap;gap:6px;}
-.unit-people span{background:#f0f9ff;border-radius:12px;padding:4px 11px;font-size:.92rem;}
-.unit-share{margin-top:10px;font-size:.8rem;line-height:1.5;color:#0f766e;background:#ecfdf5;border-radius:10px;padding:6px 10px;}
-
-
-.unit-note{margin-top:10px;font-size:.82rem;font-weight:600;line-height:1.5;color:#92400e;background:#fffbeb;border:1px dashed #fcd34d;border-radius:10px;padding:6px 10px;}
-.unit-note + .unit-share{margin-top:8px;}
-
-
-/* 飯店客房：房間 → 房型 */
-.hroom-list{padding:4px 0 2px;}
-.hroom{background:#f0f9ff;border-radius:14px;padding:10px 12px;margin-bottom:10px;}
-.hroom-head{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
-.hroom-head b{font-size:.92rem;color:#0284c7;}
-.hroom .bed{font-size:.76rem;color:#0e7490;background:#fff;border-radius:8px;padding:2px 8px;}
-.hroom .unit-people span{background:#fff;}
-
-</style>
-
+<link rel="stylesheet" href="style.css?v=1">
 </head>
-
 <body>
-
-<!-- Hero -->
-
 <section class="hero">
 <div class="hero-deco" aria-hidden="true">
-  <span class="cloud c1">☁️</span>
-  <span class="cloud c2">☁️</span>
-  <span class="cloud c3">☁️</span>
-  <span class="hero-plane">✈️</span>
-  <svg class="wave wave-back" viewBox="0 0 2400 70" preserveAspectRatio="none"><path d="M0 30 C100.0 4 300.0 56 400 30 C500.0 4 700.0 56 800 30 C900.0 4 1100.0 56 1200 30 C1300.0 4 1500.0 56 1600 30 C1700.0 4 1900.0 56 2000 30 C2100.0 4 2300.0 56 2400 30 V70 H0 Z"/></svg>
-  <svg class="wave wave-front" viewBox="0 0 2400 70" preserveAspectRatio="none"><path d="M0 34 C75.0 12 225.0 56 300 34 C375.0 12 525.0 56 600 34 C675.0 12 825.0 56 900 34 C975.0 12 1125.0 56 1200 34 C1275.0 12 1425.0 56 1500 34 C1575.0 12 1725.0 56 1800 34 C1875.0 12 2025.0 56 2100 34 C2175.0 12 2325.0 56 2400 34 V70 H0 Z"/></svg>
+<span class="cloud c1">☁️</span>
+<span class="cloud c2">☁️</span>
+<span class="cloud c3">☁️</span>
+<span class="hero-plane">✈️</span>
+<svg class="wave wave-back" viewBox="0 0 2400 70" preserveAspectRatio="none"><path d="M0 30 C100.0 4 300.0 56 400 30 C500.0 4 700.0 56 800 30 C900.0 4 1100.0 56 1200 30 C1300.0 4 1500.0 56 1600 30 C1700.0 4 1900.0 56 2000 30 C2100.0 4 2300.0 56 2400 30 V70 H0 Z"/></svg>
+<svg class="wave wave-front" viewBox="0 0 2400 70" preserveAspectRatio="none"><path d="M0 34 C75.0 12 225.0 56 300 34 C375.0 12 525.0 56 600 34 C675.0 12 825.0 56 900 34 C975.0 12 1125.0 56 1200 34 C1275.0 12 1425.0 56 1500 34 C1575.0 12 1725.0 56 1800 34 C1875.0 12 2025.0 56 2100 34 C2175.0 12 2325.0 56 2400 34 V70 H0 Z"/></svg>
 </div>
-
-
 <div class="hero-content">
-
 <h1>
 Okinawa Family Trip
 </h1>
-
 <p>
 2026.11.21 - 11.25
 </p>
 <div class="countdown-box">
-    <div class="countdown-title">
-        沖繩出發倒數
-    </div>
-
-    <div id="countdown">
-        載入中...
-    </div>
+<div class="countdown-title">
+沖繩出發倒數
+</div>
+<div id="countdown">
+載入中...
+</div>
 </div>
 <div class="badges">
-
 <div class="badge">
 👨‍👩‍👧‍👦 13位家人
 </div>
-
 <div class="badge">
 🏖️ 5天4夜
 </div>
-
 <div class="badge">
 🚐 包車旅行
 </div> 
-  
 </div>
-
 </div>
-
 </section>
-
 <nav class="quick-nav" id="quick-nav" aria-label="快速導覽">
 <div class="quick-nav-inner">
 <a href="#flights">✈️ 航班</a>
@@ -508,105 +66,74 @@ Okinawa Family Trip
 <a href="#tips">🧳 提醒</a>
 </div>
 </nav>
-
-<!-- 航班資訊 -->
-
 <section class="section" id="flights">
-
 <h2 class="section-title">
 ✈️ 航班資訊
 </h2>
-
 <div class="flight-card china-airlines">
-
-    <div class="flight-header">
-        ✈️ 去程航班
-    </div>
-
-    <div class="flight-airline">
-        CI310 中華航空
-    </div>
-
-    <div class="flight-route">
-        台中 → 沖繩
-    </div>
-
-    <div class="flight-time">
-        09:45 → 12:15
-    </div>
-
-    <div class="flight-note">
-        🕒 07:30 前抵達機場
-        <br>
-        <small>起飛前 2 小時</small>
-    </div>
-
+<div class="flight-header">
+✈️ 去程航班
 </div>
-
-<div class="flight-card starlux">
-
-    <div class="flight-header">
-        ✈️ 去程航班
-    </div>
-
-    <div class="flight-airline">
-        JX302 星宇航空
-    </div>
-
-    <div class="flight-route">
-        台中 → 沖繩
-    </div>
-
-    <div class="flight-time">
-        13:15 → 15:45
-    </div>
-
-    <div class="flight-note">
-        🕒 11:00 前抵達機場
-        <br>
-        <small>起飛前 2 小時</small>
-    </div>
-
+<div class="flight-airline">
+CI310 中華航空
 </div>
-
-<div class="flight-card return-flight">
-
-    <div class="flight-header">
-        🛬 回程航班
-    </div>
-
-    <div class="flight-airline">
-        JX303 星宇航空
-    </div>
-
-    <div class="flight-route">
-        沖繩 → 台中
-    </div>
+<div class="flight-route">
+台中 → 沖繩
+</div>
 <div class="flight-time">
-        16:45 → 17:35
+09:45 → 12:15
 </div>
 <div class="flight-note">
-    <strong>🧳 建議抵達時間</strong>
-    <br>
-    15:00 前抵達那霸機場
-    <br>
-    <small>（起飛前約 2 小時）</small>
+🕒 07:30 前抵達機場
+<br>
+<small>起飛前 2 小時</small>
 </div>
-    
-
 </div>
-
-
+<div class="flight-card starlux">
+<div class="flight-header">
+✈️ 去程航班
+</div>
+<div class="flight-airline">
+JX302 星宇航空
+</div>
+<div class="flight-route">
+台中 → 沖繩
+</div>
+<div class="flight-time">
+13:15 → 15:45
+</div>
+<div class="flight-note">
+🕒 11:00 前抵達機場
+<br>
+<small>起飛前 2 小時</small>
+</div>
+</div>
+<div class="flight-card return-flight">
+<div class="flight-header">
+🛬 回程航班
+</div>
+<div class="flight-airline">
+JX303 星宇航空
+</div>
+<div class="flight-route">
+沖繩 → 台中
+</div>
+<div class="flight-time">
+16:45 → 17:35
+</div>
+<div class="flight-note">
+<strong>🧳 建議抵達時間</strong>
+<br>
+15:00 前抵達那霸機場
+<br>
+<small>（起飛前約 2 小時）</small>
+</div>
+</div>
 </section>
-
-<!-- 五日天氣 -->
-
 <section class="section" id="weather">
-
 <h2 class="section-title">
 🌤️ 沖繩五日天氣
 </h2>
-
 <div class="wx-card">
 <div class="wx-grid" id="wx-grid">
 <div class="wx-col"><div class="wx-date">11/21<small>（六）</small></div><div class="wx-ico">☀️</div><div class="wx-temp">22°<span>/</span>27°</div><div class="wx-rain"></div></div>
@@ -617,435 +144,374 @@ Okinawa Family Trip
 </div>
 <div class="wx-note" id="wx-note">⏳ 預報載入中…（先顯示手動整理的參考值）</div>
 </div>
-
 </section>
-
-<!-- 景點 -->
-
 <section class="section" id="spots">
-
 <h2 class="section-title">
 📍 必訪景點
 </h2>
-
 <div class="spot-scroll">
-
 <div class="spot-card">
-  <img class="spot-photo" src="images/dmm_kariyushi_aquarium.jpg" alt="DMM Kariyushi Aquarium" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">DMM Kariyushi Aquarium</div>
-    <div class="spot-meta"><span class="chip">必訪</span></div>
-    <div class="spot-desc">那霸的室內水族館，結合燈光與影像的夢幻展演</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=DMM%20Kariyushi%20Aquarium%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/dmm_kariyushi_aquarium.jpg" alt="DMM Kariyushi Aquarium" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">DMM Kariyushi Aquarium</div>
+<div class="spot-meta"><span class="chip">必訪</span></div>
+<div class="spot-desc">那霸的室內水族館，結合燈光與影像的夢幻展演</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=DMM%20Kariyushi%20Aquarium%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E9%83%A8%E7%80%A8%E5%90%8D%E6%B5%B7%E4%B8%AD%E5%85%AC%E5%9C%92.jpg" alt="部瀨名海中公園" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">部瀨名海中公園</div>
-    <div class="spot-meta"><span class="chip">必訪</span></div>
-    <div class="spot-desc">搭玻璃底船，近看海底珊瑚與熱帶魚</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E9%83%A8%E7%80%A8%E5%90%8D%E6%B5%B7%E4%B8%AD%E5%85%AC%E5%9C%92%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/部瀨名海中公園.jpg" alt="部瀨名海中公園" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">部瀨名海中公園</div>
+<div class="spot-meta"><span class="chip">必訪</span></div>
+<div class="spot-desc">搭玻璃底船，近看海底珊瑚與熱帶魚</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=部瀨名海中公園%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E7%BE%8E%E9%BA%97%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8.jpg" alt="美麗海水族館" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">美麗海水族館</div>
-    <div class="spot-meta"><span class="chip">必訪</span></div>
-    <div class="spot-desc">沖繩最經典的景點，大水槽裡有鯨鯊和鬼蝠魟</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B9%A9%E7%BE%8E%E9%BA%97%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/美麗海水族館.jpg" alt="美麗海水族館" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">美麗海水族館</div>
+<div class="spot-meta"><span class="chip">必訪</span></div>
+<div class="spot-desc">沖繩最經典的景點，大水槽裡有鯨鯊和鬼蝠魟</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=沖繩美麗海水族館" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E7%BE%8E%E5%9C%8B%E6%9D%91.jpg" alt="美國村" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">美國村</div>
-    <div class="spot-meta"><span class="chip">必訪</span></div>
-    <div class="spot-desc">美式風格商圈，逛街吃飯、看夕陽都很適合</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E8%B0%B7%E7%BE%8E%E5%9C%8B%E6%9D%91%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/美國村.jpg" alt="美國村" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">美國村</div>
+<div class="spot-meta"><span class="chip">必訪</span></div>
+<div class="spot-desc">美式風格商圈，逛街吃飯、看夕陽都很適合</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=北谷美國村%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E6%B8%AF%E5%B7%9D%E5%A4%96%E4%BA%BA%E4%BD%8F%E5%AE%85%E8%A1%97.jpg" alt="港川外人住宅街" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">港川外人住宅街</div>
-    <div class="spot-meta"><span class="chip soft">順路小景點</span></div>
-    <div class="spot-desc">舊時外籍人士住宅改成的特色小店與咖啡街區</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B8%AF%E5%B7%9D%E5%A4%96%E4%BA%BA%E4%BD%8F%E5%AE%85%E8%A1%97%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/港川外人住宅街.jpg" alt="港川外人住宅街" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">港川外人住宅街</div>
+<div class="spot-meta"><span class="chip soft">順路小景點</span></div>
+<div class="spot-desc">舊時外籍人士住宅改成的特色小店與咖啡街區</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=港川外人住宅街%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/SAN-A%20PARCO%20CITY.png" alt="SAN-A PARCO CITY" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">SAN-A PARCO CITY</div>
-    <div class="spot-meta"><span class="chip soft">購物</span></div>
-    <div class="spot-desc">大型購物商場，逛街、用餐一次搞定</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=SAN-A%20PARCO%20CITY%20%E6%B5%A6%E6%B7%BB" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/SAN-A%20PARCO%20CITY.png" alt="SAN-A PARCO CITY" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">SAN-A PARCO CITY</div>
+<div class="spot-meta"><span class="chip soft">購物</span></div>
+<div class="spot-desc">大型購物商場，逛街、用餐一次搞定</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=SAN-A%20PARCO%20CITY%20浦添" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E9%81%94%E6%91%A9%E5%AF%BA.jpg" alt="達摩寺" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">達摩寺</div>
-    <div class="spot-meta"><span class="chip soft">順路小景點</span></div>
-    <div class="spot-desc">以達摩為主題的寺廟，順路走走參拜</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E9%81%94%E6%91%A9%E5%AF%BA%20%E6%B5%A6%E6%B7%BB%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/達摩寺.jpg" alt="達摩寺" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">達摩寺</div>
+<div class="spot-meta"><span class="chip soft">順路小景點</span></div>
+<div class="spot-desc">以達摩為主題的寺廟，順路走走參拜</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=達摩寺%20浦添%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E6%B3%A2%E4%B8%8A%E5%AE%AE.jpg" alt="波上宮" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">波上宮</div>
-    <div class="spot-meta"><span class="chip">必訪</span></div>
-    <div class="spot-desc">建在海邊崖上的神社，是沖繩最具代表性的神社</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B8%8A%E5%AE%AE%20%E9%82%A3%E9%9C%B8" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/波上宮.jpg" alt="波上宮" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">波上宮</div>
+<div class="spot-meta"><span class="chip">必訪</span></div>
+<div class="spot-desc">建在海邊崖上的神社，是沖繩最具代表性的神社</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=波上宮%20那霸" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E7%8E%89%E6%B3%89%E6%B4%9E.jpg" alt="玉泉洞" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">玉泉洞</div>
-    <div class="spot-meta"><span class="chip">必訪</span></div>
-    <div class="spot-desc">大型鐘乳石洞，走進地底欣賞自然奇景</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E7%8E%89%E6%B3%89%E6%B4%9E%20%E6%B2%96%E7%B9%A9%E4%B8%96%E7%95%8C" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/玉泉洞.jpg" alt="玉泉洞" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">玉泉洞</div>
+<div class="spot-meta"><span class="chip">必訪</span></div>
+<div class="spot-desc">大型鐘乳石洞，走進地底欣賞自然奇景</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=玉泉洞%20沖繩世界" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E5%9C%8B%E9%9A%9B%E9%80%9A.jpg" alt="國際通" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">國際通</div>
-    <div class="spot-meta"><span class="chip">必訪</span></div>
-    <div class="spot-desc">那霸最熱鬧的大街，伴手禮和小吃一次逛完</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E5%9C%8B%E9%9A%9B%E9%80%9A%20%E9%82%A3%E9%9C%B8" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/國際通.jpg" alt="國際通" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">國際通</div>
+<div class="spot-meta"><span class="chip">必訪</span></div>
+<div class="spot-desc">那霸最熱鬧的大街，伴手禮和小吃一次逛完</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=國際通%20那霸" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E6%B3%8A%E6%B8%AF%E6%BC%81%E5%B8%82%E5%A0%B4.jpg" alt="泊港漁市場" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">泊港漁市場</div>
-    <div class="spot-meta"><span class="chip soft">順路小景點</span></div>
-    <div class="spot-desc">在地漁市場，感受沖繩的海鮮與生活氣息</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%8A%E6%B8%AF%E6%BC%81%E5%B8%82%E5%A0%B4%20%E9%82%A3%E9%9C%B8" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/泊港漁市場.jpg" alt="泊港漁市場" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">泊港漁市場</div>
+<div class="spot-meta"><span class="chip soft">順路小景點</span></div>
+<div class="spot-desc">在地漁市場，感受沖繩的海鮮與生活氣息</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=泊港漁市場%20那霸" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="spot-card">
-  <img class="spot-photo" src="images/%E7%80%A8%E9%95%B7%E5%B3%B6.jpg" alt="瀨長島" loading="lazy">
-  <div class="spot-body">
-    <div class="spot-name">瀨長島</div>
-    <div class="spot-meta"><span class="chip">必訪</span></div>
-    <div class="spot-desc">海邊的白色露台，飛機從頭頂起降，日落特別美</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E7%80%A8%E9%95%B7%E5%B3%B6%20Umikaji%20Terrace" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="spot-photo" src="images/瀨長島.jpg" alt="瀨長島" loading="lazy">
+<div class="spot-body">
+<div class="spot-name">瀨長島</div>
+<div class="spot-meta"><span class="chip">必訪</span></div>
+<div class="spot-desc">海邊的白色露台，飛機從頭頂起降，日落特別美</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=瀨長島%20Umikaji%20Terrace" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
 </div>
-
+</div>
 </section>
-
-<!-- 美食 -->
-
 <section class="section" id="food">
-
 <h2 class="section-title">
 🍜 美食推薦
 </h2>
-
 <div class="food-scroll">
-
 <div class="food-card">
-  <img class="food-photo" src="images/%E9%80%9A%E5%A0%82%E6%8B%89%E9%BA%B5.jpg" alt="通堂拉麵 小祿本店" loading="lazy">
-  <div class="food-body">
-    <div class="food-name">通堂拉麵 小祿本店</div>
-    <div class="food-meta"><span class="chip">拉麵</span></div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E9%80%9A%E5%A0%82%E6%8B%89%E9%BA%B5%20%E5%B0%8F%E7%A5%BF%E6%9C%AC%E5%BA%97%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="food-photo" src="images/通堂拉麵.jpg" alt="通堂拉麵 小祿本店" loading="lazy">
+<div class="food-body">
+<div class="food-name">通堂拉麵 小祿本店</div>
+<div class="food-meta"><span class="chip">拉麵</span></div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=通堂拉麵%20小祿本店%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="food-card">
-  <img class="food-photo" src="images/%E6%BC%81%E5%B8%AB%E9%A3%9F%E5%A0%82.jpg" alt="漁師食堂" loading="lazy">
-  <div class="food-body">
-    <div class="food-name">漁師食堂</div>
-    <div class="food-meta"><span class="chip">海鮮</span></div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%BC%81%E5%B8%AB%E9%A3%9F%E5%A0%82%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="food-photo" src="images/漁師食堂.jpg" alt="漁師食堂" loading="lazy">
+<div class="food-body">
+<div class="food-name">漁師食堂</div>
+<div class="food-meta"><span class="chip">海鮮</span></div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=漁師食堂%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="food-card">
-  <img class="food-photo" src="images/The%20Sinmay.png" alt="The Sinmay" loading="lazy">
-  <div class="food-body">
-    <div class="food-name">The Sinmay</div>
-    <div class="food-meta"><span class="chip">飲品</span><span class="chip warm">必喝黑糖系列</span></div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=The%20Sinmay%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="food-photo" src="images/The%20Sinmay.png" alt="The Sinmay" loading="lazy">
+<div class="food-body">
+<div class="food-name">The Sinmay</div>
+<div class="food-meta"><span class="chip">飲品</span><span class="chip warm">必喝黑糖系列</span></div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=The%20Sinmay%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="food-card">
-  <img class="food-photo" src="images/%E8%B1%AC%E8%82%89%E8%9B%8B%E9%A3%AF%E7%B3%B0.jpg" alt="沖繩豬肉蛋飯糰 本部町店" loading="lazy">
-  <div class="food-body">
-    <div class="food-name">沖繩豬肉蛋飯糰 本部町店</div>
-    <div class="food-meta"><span class="chip">沖繩飯糰</span></div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B9%A9%E8%B1%AC%E8%82%89%E8%9B%8B%E9%A3%AF%E7%B3%B0%20%E6%9C%AC%E9%83%A8%E7%94%BA%E5%BA%97" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="food-photo" src="images/豬肉蛋飯糰.jpg" alt="沖繩豬肉蛋飯糰 本部町店" loading="lazy">
+<div class="food-body">
+<div class="food-name">沖繩豬肉蛋飯糰 本部町店</div>
+<div class="food-meta"><span class="chip">沖繩飯糰</span></div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=沖繩豬肉蛋飯糰%20本部町店" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="food-card">
-  <img class="food-photo" src="images/Taco%20Rice%20Cafe%20Kijimuna.jpg" alt="Taco Rice Cafe Kijimuna" loading="lazy">
-  <div class="food-body">
-    <div class="food-name">Taco Rice Cafe Kijimuna</div>
-    <div class="food-meta"><span class="chip">塔可飯</span></div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=Taco%20Rice%20Cafe%20Kijimuna%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="food-photo" src="images/Taco%20Rice%20Cafe%20Kijimuna.jpg" alt="Taco Rice Cafe Kijimuna" loading="lazy">
+<div class="food-body">
+<div class="food-name">Taco Rice Cafe Kijimuna</div>
+<div class="food-meta"><span class="chip">塔可飯</span></div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=Taco%20Rice%20Cafe%20Kijimuna%20沖繩" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="food-card">
-  <img class="food-photo" src="images/%E7%90%89%E7%90%83%E7%9A%84%E7%89%9B.jpg" alt="琉球的牛 久茂地店" loading="lazy">
-  <div class="food-body">
-    <div class="food-name">琉球的牛 久茂地店</div>
-    <div class="food-meta"><span class="chip">燒肉</span><span class="chip warm">需訂位</span></div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E7%90%89%E7%90%83%E3%81%AE%E7%89%9B%20%E4%B9%85%E8%8C%82%E5%9C%B0%E5%BA%97%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="food-photo" src="images/琉球的牛.jpg" alt="琉球的牛 久茂地店" loading="lazy">
+<div class="food-body">
+<div class="food-name">琉球的牛 久茂地店</div>
+<div class="food-meta"><span class="chip">燒肉</span><span class="chip warm">需訂位</span></div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=琉球の牛%20久茂地店%20那覇" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="food-card">
-  <img class="food-photo" src="images/%E9%82%A3%E9%9C%B8%E5%B8%82%E7%AC%AC%E4%B8%80%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4.jpg" alt="第一牧志公設市場" loading="lazy">
-  <div class="food-body">
-    <div class="food-name">第一牧志公設市場</div>
-    <div class="food-meta"><span class="chip">在地市場</span></div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E9%82%A3%E9%9C%B8%E5%B8%82%E7%AC%AC%E4%B8%80%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="food-photo" src="images/那霸市第一牧志公設市場.jpg" alt="第一牧志公設市場" loading="lazy">
+<div class="food-body">
+<div class="food-name">第一牧志公設市場</div>
+<div class="food-meta"><span class="chip">在地市場</span></div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=那霸市第一牧志公設市場" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
+</div>
 <div class="food-card">
-  <img class="food-photo" src="images/%E7%B4%BA%20Kou.jpg" alt="紺 Kou 東町本店" loading="lazy">
-  <div class="food-body">
-    <div class="food-name">紺 Kou 東町本店</div>
-    <div class="food-meta"><span class="chip">涮涮鍋</span></div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E7%B4%BA%20Kou%20%E6%9D%B1%E7%94%BA%E6%9C%AC%E5%BA%97%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener">📍 地圖</a></div>
-  </div>
+<img class="food-photo" src="images/紺%20Kou.jpg" alt="紺 Kou 東町本店" loading="lazy">
+<div class="food-body">
+<div class="food-name">紺 Kou 東町本店</div>
+<div class="food-meta"><span class="chip">涮涮鍋</span></div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=紺%20Kou%20東町本店%20那覇" target="_blank" rel="noopener">📍 地圖</a></div>
 </div>
-
 </div>
-
+</div>
 </section>
-
-
-<!-- 住宿 -->
-
-<!-- 住宿與房間分配 -->
-
 <section class="section" id="stay">
-
 <h2 class="section-title">
 🏨 住宿與房間分配
 </h2>
-
 <div class="stay-list">
-
 <div class="stay-card">
-  <img class="stay-photo" src="images/HOTEL%20HAABESU%20OKINAWA-01.jpg" alt="HOTEL HAABESU" loading="lazy">
-  <div class="stay-body">
-    <div class="stay-top"><span class="chip">前兩晚</span><span class="stay-dates">📅 11/21 – 11/23</span></div>
-    <div class="stay-name">HOTEL HAABESU</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=HOTEL%20HAABESU%20OKINAWA" target="_blank" rel="noopener">📍 地圖</a></div>
-    <details class="rooms">
-      <summary>🛏️ 房間分配（共 3 戶公寓）</summary>
-      <div class="unit-list">
+<img class="stay-photo" src="images/HOTEL%20HAABESU%20OKINAWA-01.jpg" alt="HOTEL HAABESU" loading="lazy">
+<div class="stay-body">
+<div class="stay-top"><span class="chip">前兩晚</span><span class="stay-dates">📅 11/21 – 11/23</span></div>
+<div class="stay-name">HOTEL HAABESU</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=HOTEL%20HAABESU%20OKINAWA" target="_blank" rel="noopener">📍 地圖</a></div>
+<details class="rooms">
+<summary>🛏️ 房間分配（共 3 戶公寓）</summary>
+<div class="unit-list">
 <div class="unit">
-  <div class="unit-head"><span>🏠 A 戶</span><span class="unit-tag">整戶公寓・2 房</span></div>
-  <div class="uroom">
-    <div class="uroom-head"><b>房間 1</b><span class="bed">🛏️ 雙人床</span></div>
-    <div class="unit-people"><span>二阿姨</span><span>二姨丈</span></div>
-  </div>
-  <div class="uroom">
-    <div class="uroom-head"><b>房間 2</b><span class="bed">🛏️🛏️ 兩張單人床</span></div>
-    <div class="unit-people"><span>小阿姨</span><span>小姨丈</span></div>
-  </div>
-  <div class="unit-note">📝 房間進去後再自己選</div>
-  <div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
+<div class="unit-head"><span>🏠 A 戶</span><span class="unit-tag">整戶公寓・2 房</span></div>
+<div class="uroom">
+<div class="uroom-head"><b>房間 1</b><span class="bed">🛏️ 雙人床</span></div>
+<div class="unit-people"><span>二阿姨</span><span>二姨丈</span></div>
 </div>
-<div class="unit">
-  <div class="unit-head"><span>🏠 B 戶</span><span class="unit-tag">整戶公寓・2 房</span></div>
-  <div class="uroom">
-    <div class="uroom-head"><b>房間 1</b><span class="bed">🛏️ 雙人床</span></div>
-    <div class="unit-people"><span>大姨</span></div>
-  </div>
-  <div class="uroom">
-    <div class="uroom-head"><b>房間 2</b><span class="bed">🛏️🛏️ 兩張單人床</span></div>
-    <div class="unit-people"><span>明寶</span><span>小茜</span><span>程翰</span></div>
-  </div>
-  <div class="unit-note">📝 房間進去後再自己選</div>
-  <div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
+<div class="uroom">
+<div class="uroom-head"><b>房間 2</b><span class="bed">🛏️🛏️ 兩張單人床</span></div>
+<div class="unit-people"><span>小阿姨</span><span>小姨丈</span></div>
+</div>
+<div class="unit-note">📝 房間進去後再自己選</div>
+<div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
 </div>
 <div class="unit">
-  <div class="unit-head"><span>🏠 C 戶</span><span class="unit-tag">整戶公寓・1 房</span></div>
-  <div class="uroom">
-    <div class="uroom-head"><b>房間</b><span class="bed">🛏️🛏️🛏️ 雙人床＋兩張單人床</span></div>
-    <div class="unit-people"><span>佩妏</span><span>小琪</span><span>易宣</span><span>雅涵</span><span>彣烜</span></div>
-  </div>
-  <div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
+<div class="unit-head"><span>🏠 B 戶</span><span class="unit-tag">整戶公寓・2 房</span></div>
+<div class="uroom">
+<div class="uroom-head"><b>房間 1</b><span class="bed">🛏️ 雙人床</span></div>
+<div class="unit-people"><span>大姨</span></div>
 </div>
-      </div>
-    </details>
-  </div>
+<div class="uroom">
+<div class="uroom-head"><b>房間 2</b><span class="bed">🛏️🛏️ 兩張單人床</span></div>
+<div class="unit-people"><span>明寶</span><span>小茜</span><span>程翰</span></div>
 </div>
-
+<div class="unit-note">📝 房間進去後再自己選</div>
+<div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
+</div>
+<div class="unit">
+<div class="unit-head"><span>🏠 C 戶</span><span class="unit-tag">整戶公寓・1 房</span></div>
+<div class="uroom">
+<div class="uroom-head"><b>房間</b><span class="bed">🛏️🛏️🛏️ 雙人床＋兩張單人床</span></div>
+<div class="unit-people"><span>佩妏</span><span>小琪</span><span>易宣</span><span>雅涵</span><span>彣烜</span></div>
+</div>
+<div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
+</div>
+</div>
+</details>
+</div>
+</div>
 <div class="stay-card">
-  <img class="stay-photo" src="images/Daiwa%20Roynet%20Hotel%20Naha%20Kokusaidori-01.jpg" alt="Daiwa Roynet Hotel Naha Kokusaidori" loading="lazy">
-  <div class="stay-body">
-    <div class="stay-top"><span class="chip">後兩晚</span><span class="stay-dates">📅 11/23 – 11/25</span></div>
-    <div class="stay-name">Daiwa Roynet Hotel Naha Kokusaidori</div>
-    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20Naha%20Kokusaidori" target="_blank" rel="noopener">📍 地圖</a></div>
-    <details class="rooms">
-      <summary>🛏️ 房間分配（5 間客房）</summary>
-      <div class="hroom-list">
+<img class="stay-photo" src="images/Daiwa%20Roynet%20Hotel%20Naha%20Kokusaidori-01.jpg" alt="Daiwa Roynet Hotel Naha Kokusaidori" loading="lazy">
+<div class="stay-body">
+<div class="stay-top"><span class="chip">後兩晚</span><span class="stay-dates">📅 11/23 – 11/25</span></div>
+<div class="stay-name">Daiwa Roynet Hotel Naha Kokusaidori</div>
+<div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20Naha%20Kokusaidori" target="_blank" rel="noopener">📍 地圖</a></div>
+<details class="rooms">
+<summary>🛏️ 房間分配（5 間客房）</summary>
+<div class="hroom-list">
 <div class="hroom">
-  <div class="hroom-head"><b>Room 1</b><span class="bed">🛏️🛏️ 雙床房</span></div>
-  <div class="unit-people"><span>二阿姨</span><span>二姨丈</span></div>
-</div>
-<div class="hroom">
-  <div class="hroom-head"><b>Room 2</b><span class="bed">🛏️🛏️ 雙床房</span></div>
-  <div class="unit-people"><span>小阿姨</span><span>小姨丈</span></div>
+<div class="hroom-head"><b>Room 1</b><span class="bed">🛏️🛏️ 雙床房</span></div>
+<div class="unit-people"><span>二阿姨</span><span>二姨丈</span></div>
 </div>
 <div class="hroom">
-  <div class="hroom-head"><b>Room 3</b><span class="bed">🛏️🛏️ 雙床房</span></div>
-  <div class="unit-people"><span>明寶</span><span>小茜</span><span>程翰</span></div>
+<div class="hroom-head"><b>Room 2</b><span class="bed">🛏️🛏️ 雙床房</span></div>
+<div class="unit-people"><span>小阿姨</span><span>小姨丈</span></div>
 </div>
 <div class="hroom">
-  <div class="hroom-head"><b>Room 4</b><span class="bed">🛏️🛏️ 雙床房</span></div>
-  <div class="unit-people"><span>易宣</span><span>雅涵</span><span>彣烜</span></div>
+<div class="hroom-head"><b>Room 3</b><span class="bed">🛏️🛏️ 雙床房</span></div>
+<div class="unit-people"><span>明寶</span><span>小茜</span><span>程翰</span></div>
 </div>
 <div class="hroom">
-  <div class="hroom-head"><b>Room 5</b><span class="bed">🛏️🛏️🛏️ 三人房</span></div>
-  <div class="unit-people"><span>大姨</span><span>佩妏</span><span>小琪</span></div>
+<div class="hroom-head"><b>Room 4</b><span class="bed">🛏️🛏️ 雙床房</span></div>
+<div class="unit-people"><span>易宣</span><span>雅涵</span><span>彣烜</span></div>
 </div>
-      </div>
-    </details>
-  </div>
+<div class="hroom">
+<div class="hroom-head"><b>Room 5</b><span class="bed">🛏️🛏️🛏️ 三人房</span></div>
+<div class="unit-people"><span>大姨</span><span>佩妏</span><span>小琪</span></div>
 </div>
-
 </div>
-
+</details>
+</div>
+</div>
+</div>
 </section>
-
-
-<!-- 每日行程 -->
-
 <section class="section" id="itinerary">
-
 <h2 class="section-title">
 📅 每日行程
 </h2>
-
 <details open class="card day-card" data-day="1">
 <summary>🏝️ Day 1｜11/21（六）抵達沖繩</summary>
 <div class="timeline">
-  <div class="stop"><div class="time">12:15</div><div class="dot"></div><div class="body"><div class="title">🛬 抵達那霸機場</div><span class="tag">第一批家人</span></div></div>
-  <div class="stop"><div class="time">13:15</div><div class="dot"></div><div class="body"><div class="title">👨‍👩‍👧‍👦 包車接機</div></div></div>
-  <div class="drive"><span>🚘 10 分鐘</span></div>
-  <div class="stop meal"><div class="time">13:25</div><div class="dot"></div><div class="body"><div class="title">🍜 午餐｜通堂拉麵 小祿本店</div></div></div>
-  <div class="drive"><span>🚘 20 分鐘</span></div>
-  <div class="stop"><div class="time">14:20</div><div class="dot"></div><div class="body"><div class="title">🐠 DMM Kariyushi Aquarium</div></div></div>
-  <div class="drive"><span>🚘 20 分鐘</span></div>
-  <div class="stop"><div class="time">16:40</div><div class="dot"></div><div class="body"><div class="title">🛬 接第二批家人</div></div></div>
-  <div class="drive"><span>🚘 10 分鐘</span></div>
-  <div class="stop meal"><div class="time">17:10</div><div class="dot"></div><div class="body"><div class="title">🍣 晚餐｜漁師食堂</div></div></div>
-  <div class="drive"><span>🚘 10 分鐘</span></div>
-  <div class="stop end"><div class="time">18:50</div><div class="dot"></div><div class="body"><div class="title">🏨 民宿 Check in</div></div></div>
+<div class="stop"><div class="time">12:15</div><div class="dot"></div><div class="body"><div class="title">🛬 抵達那霸機場</div><span class="tag">第一批家人</span></div></div>
+<div class="stop"><div class="time">13:15</div><div class="dot"></div><div class="body"><div class="title">👨‍👩‍👧‍👦 包車接機</div></div></div>
+<div class="drive"><span>🚘 10 分鐘</span></div>
+<div class="stop meal"><div class="time">13:25</div><div class="dot"></div><div class="body"><div class="title">🍜 午餐｜通堂拉麵 小祿本店</div></div></div>
+<div class="drive"><span>🚘 20 分鐘</span></div>
+<div class="stop"><div class="time">14:20</div><div class="dot"></div><div class="body"><div class="title">🐠 DMM Kariyushi Aquarium</div></div></div>
+<div class="drive"><span>🚘 20 分鐘</span></div>
+<div class="stop"><div class="time">16:40</div><div class="dot"></div><div class="body"><div class="title">🛬 接第二批家人</div></div></div>
+<div class="drive"><span>🚘 10 分鐘</span></div>
+<div class="stop meal"><div class="time">17:10</div><div class="dot"></div><div class="body"><div class="title">🍣 晚餐｜漁師食堂</div></div></div>
+<div class="drive"><span>🚘 10 分鐘</span></div>
+<div class="stop end"><div class="time">18:50</div><div class="dot"></div><div class="body"><div class="title">🏨 民宿 Check in</div></div></div>
 </div>
 </details>
-
 <details class="card day-card" data-day="2">
 <summary>🌊 Day 2｜11/22（日）北部海洋之旅</summary>
 <div class="timeline">
-  <div class="stop"><div class="time">09:00</div><div class="dot"></div><div class="body"><div class="title">🚌 民宿出發</div></div></div>
-  <div class="drive"><span>🚘 50 分鐘</span></div>
-  <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🌊 部瀨名海中公園</div><span class="tag">❇️ 建議搭乘 10:30 玻璃船</span></div></div>
-  <div class="drive"><span>🚘 35 分鐘</span></div>
-  <div class="stop"><div class="time">12:15</div><div class="dot"></div><div class="body"><div class="title">📸 The Sinmay</div><span class="tag">❇️ 必喝黑糖系列飲品</span></div></div>
-  <div class="drive"><span>🚘 20 分鐘</span></div>
-  <div class="stop meal"><div class="time">13:05</div><div class="dot"></div><div class="body"><div class="title">🍙 午餐｜沖繩豬肉蛋飯糰 本部町店</div></div></div>
-  <div class="drive"><span>🚘 5 分鐘</span></div>
-  <div class="stop"><div class="time">14:15</div><div class="dot"></div><div class="body"><div class="title">🐋 美麗海水族館</div><span class="tag warn">⏰ 最晚 16:30 要離開</span></div></div>
-  <div class="drive"><span>🚘 2 小時</span></div>
-  <div class="stop"><div class="time">18:45</div><div class="dot"></div><div class="body"><div class="title">🌅 美國村自由活動</div></div></div>
-  <div class="stop meal"><div class="time none">—</div><div class="dot"></div><div class="body"><div class="title">🌮 晚餐｜Taco Rice Cafe Kijimuna</div></div></div>
-  <div class="drive"><span>🚘 30 分鐘</span></div>
-  <div class="stop end"><div class="time">21:00</div><div class="dot"></div><div class="body"><div class="title">🏨 抵達民宿</div></div></div>
+<div class="stop"><div class="time">09:00</div><div class="dot"></div><div class="body"><div class="title">🚌 民宿出發</div></div></div>
+<div class="drive"><span>🚘 50 分鐘</span></div>
+<div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🌊 部瀨名海中公園</div><span class="tag">❇️ 建議搭乘 10:30 玻璃船</span></div></div>
+<div class="drive"><span>🚘 35 分鐘</span></div>
+<div class="stop"><div class="time">12:15</div><div class="dot"></div><div class="body"><div class="title">📸 The Sinmay</div><span class="tag">❇️ 必喝黑糖系列飲品</span></div></div>
+<div class="drive"><span>🚘 20 分鐘</span></div>
+<div class="stop meal"><div class="time">13:05</div><div class="dot"></div><div class="body"><div class="title">🍙 午餐｜沖繩豬肉蛋飯糰 本部町店</div></div></div>
+<div class="drive"><span>🚘 5 分鐘</span></div>
+<div class="stop"><div class="time">14:15</div><div class="dot"></div><div class="body"><div class="title">🐋 美麗海水族館</div><span class="tag warn">⏰ 最晚 16:30 要離開</span></div></div>
+<div class="drive"><span>🚘 2 小時</span></div>
+<div class="stop"><div class="time">18:45</div><div class="dot"></div><div class="body"><div class="title">🌅 美國村自由活動</div></div></div>
+<div class="stop meal"><div class="time none">—</div><div class="dot"></div><div class="body"><div class="title">🌮 晚餐｜Taco Rice Cafe Kijimuna</div></div></div>
+<div class="drive"><span>🚘 30 分鐘</span></div>
+<div class="stop end"><div class="time">21:00</div><div class="dot"></div><div class="body"><div class="title">🏨 抵達民宿</div></div></div>
 </div>
 <div class="callout">⚠️ 這天包車只到晚上 19 點，可付超時費延到 21 點，視當日情況調整是否去美國村。</div>
 </details>
-
 <details class="card day-card" data-day="3">
 <summary>🏙️ Day 3｜11/23（一）浦添・那霸市區</summary>
 <div class="timeline">
-  <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 民宿出發</div></div></div>
-  <div class="drive"><span>🚘 10 分鐘</span></div>
-  <div class="stop"><div class="time">10:10</div><div class="dot"></div><div class="body"><div class="title">🏘️ 港川外人住宅街</div></div></div>
-  <div class="drive"><span>🚘 10 分鐘</span></div>
-  <div class="stop"><div class="time">11:10</div><div class="dot"></div><div class="body"><div class="title">🛍️ SAN-A PARCO CITY</div><span class="tag warn">⏰ 最晚 14:30 要離開</span><span class="tag food">🍱 午餐：館內自由用餐</span></div></div>
-  <div class="drive"><span>🚘 20 分鐘</span></div>
-  <div class="stop"><div class="time">14:50</div><div class="dot"></div><div class="body"><div class="title">🏯 達摩寺</div></div></div>
-  <div class="drive"><span>🚘 30 分鐘</span></div>
-  <div class="stop"><div class="time">16:00</div><div class="dot"></div><div class="body"><div class="title">⛩️ 波上宮</div></div></div>
-  <div class="drive"><span>🚘 20 分鐘</span></div>
-  <div class="stop meal"><div class="time">17:15</div><div class="dot"></div><div class="body"><div class="title">🥩 晚餐｜琉球的牛 久茂地店</div><span class="tag food">17:15 × 1 組 ＋ 17:30 × 2 組 ＋ 17:45 × 1 組</span></div></div>
-  <div class="drive"><span>🚘 10 分鐘</span></div>
-  <div class="stop end"><div class="time">19:40</div><div class="dot"></div><div class="body"><div class="title">🏨 Daiwa Roynet Hotel Check in</div></div></div>
+<div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 民宿出發</div></div></div>
+<div class="drive"><span>🚘 10 分鐘</span></div>
+<div class="stop"><div class="time">10:10</div><div class="dot"></div><div class="body"><div class="title">🏘️ 港川外人住宅街</div></div></div>
+<div class="drive"><span>🚘 10 分鐘</span></div>
+<div class="stop"><div class="time">11:10</div><div class="dot"></div><div class="body"><div class="title">🛍️ SAN-A PARCO CITY</div><span class="tag warn">⏰ 最晚 14:30 要離開</span><span class="tag food">🍱 午餐：館內自由用餐</span></div></div>
+<div class="drive"><span>🚘 20 分鐘</span></div>
+<div class="stop"><div class="time">14:50</div><div class="dot"></div><div class="body"><div class="title">🏯 達摩寺</div></div></div>
+<div class="drive"><span>🚘 30 分鐘</span></div>
+<div class="stop"><div class="time">16:00</div><div class="dot"></div><div class="body"><div class="title">⛩️ 波上宮</div></div></div>
+<div class="drive"><span>🚘 20 分鐘</span></div>
+<div class="stop meal"><div class="time">17:15</div><div class="dot"></div><div class="body"><div class="title">🥩 晚餐｜琉球的牛 久茂地店</div><span class="tag food">17:15 × 1 組 ＋ 17:30 × 2 組 ＋ 17:45 × 1 組</span></div></div>
+<div class="drive"><span>🚘 10 分鐘</span></div>
+<div class="stop end"><div class="time">19:40</div><div class="dot"></div><div class="body"><div class="title">🏨 Daiwa Roynet Hotel Check in</div></div></div>
 </div>
 </details>
-
 <details class="card day-card" data-day="4">
 <summary>🛍️ Day 4｜11/24（二）南部文化體驗</summary>
 <div class="timeline">
-  <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 飯店出發</div></div></div>
-  <div class="drive"><span>🚘 30 分鐘</span></div>
-  <div class="stop"><div class="time">10:30</div><div class="dot"></div><div class="body"><div class="title">🕳️ 玉泉洞</div></div></div>
-  <div class="drive"><span>🚘 40 分鐘</span></div>
-  <div class="stop meal"><div class="time">13:10</div><div class="dot"></div><div class="body"><div class="title">🍱 午餐｜第一牧志公設市場</div></div></div>
-  <div class="stop"><div class="time">15:10</div><div class="dot"></div><div class="body"><div class="title">🛍️ 國際通逛逛買買</div><span class="tag warn">⏰ 最晚 17:50 要離開</span></div></div>
-  <div class="drive"><span>🚘 5 分鐘</span></div>
-  <div class="stop meal"><div class="time">18:00</div><div class="dot"></div><div class="body"><div class="title">🥘 晚餐｜紺 Kou 東町本店</div></div></div>
-  <div class="stop end"><div class="time">19:30</div><div class="dot"></div><div class="body"><div class="title">🏨 返回飯店</div></div></div>
+<div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 飯店出發</div></div></div>
+<div class="drive"><span>🚘 30 分鐘</span></div>
+<div class="stop"><div class="time">10:30</div><div class="dot"></div><div class="body"><div class="title">🕳️ 玉泉洞</div></div></div>
+<div class="drive"><span>🚘 40 分鐘</span></div>
+<div class="stop meal"><div class="time">13:10</div><div class="dot"></div><div class="body"><div class="title">🍱 午餐｜第一牧志公設市場</div></div></div>
+<div class="stop"><div class="time">15:10</div><div class="dot"></div><div class="body"><div class="title">🛍️ 國際通逛逛買買</div><span class="tag warn">⏰ 最晚 17:50 要離開</span></div></div>
+<div class="drive"><span>🚘 5 分鐘</span></div>
+<div class="stop meal"><div class="time">18:00</div><div class="dot"></div><div class="body"><div class="title">🥘 晚餐｜紺 Kou 東町本店</div></div></div>
+<div class="stop end"><div class="time">19:30</div><div class="dot"></div><div class="body"><div class="title">🏨 返回飯店</div></div></div>
 </div>
 </details>
-
 <details class="card day-card" data-day="5">
 <summary>✈️ Day 5｜11/25（三）回台灣</summary>
 <div class="timeline">
-  <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 飯店出發</div></div></div>
-  <div class="drive"><span>🚘 10 分鐘</span></div>
-  <div class="stop"><div class="time">10:10</div><div class="dot"></div><div class="body"><div class="title">🐟 泊港漁市場</div></div></div>
-  <div class="drive"><span>🚘 30 分鐘</span></div>
-  <div class="stop"><div class="time">11:40</div><div class="dot"></div><div class="body"><div class="title">🌴 瀨長島 Umikaji Terrace</div><span class="tag warn">⏰ 最晚 14:00 要離開</span><span class="tag food">🍴 午餐＋自由活動</span></div></div>
-  <div class="drive"><span>🚘 10 分鐘</span></div>
-  <div class="stop"><div class="time">14:10</div><div class="dot"></div><div class="body"><div class="title">🛫 抵達那霸機場辦理報到及退稅</div></div></div>
-  <div class="stop"><div class="time">16:45</div><div class="dot"></div><div class="body"><div class="title">✈️ JX303 起飛返台</div></div></div>
-  <div class="stop end"><div class="time">17:35</div><div class="dot"></div><div class="body"><div class="title">🛬 抵達台中</div></div></div>
+<div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 飯店出發</div></div></div>
+<div class="drive"><span>🚘 10 分鐘</span></div>
+<div class="stop"><div class="time">10:10</div><div class="dot"></div><div class="body"><div class="title">🐟 泊港漁市場</div></div></div>
+<div class="drive"><span>🚘 30 分鐘</span></div>
+<div class="stop"><div class="time">11:40</div><div class="dot"></div><div class="body"><div class="title">🌴 瀨長島 Umikaji Terrace</div><span class="tag warn">⏰ 最晚 14:00 要離開</span><span class="tag food">🍴 午餐＋自由活動</span></div></div>
+<div class="drive"><span>🚘 10 分鐘</span></div>
+<div class="stop"><div class="time">14:10</div><div class="dot"></div><div class="body"><div class="title">🛫 抵達那霸機場辦理報到及退稅</div></div></div>
+<div class="stop"><div class="time">16:45</div><div class="dot"></div><div class="body"><div class="title">✈️ JX303 起飛返台</div></div></div>
+<div class="stop end"><div class="time">17:35</div><div class="dot"></div><div class="body"><div class="title">🛬 抵達台中</div></div></div>
 </div>
 </details>
-
 </section>
 <section class="section" id="tips">
-
 <h2 class="section-title">
 🧳 旅遊小提醒
 </h2>
-
 <details class="card tips-card">
 <summary>點開查看：護照・日幣・常備藥品・退稅</summary>
-
 <div class="tip-block">
 <h3>🛂 護照</h3>
 <ul>
@@ -1055,7 +521,6 @@ Okinawa Family Trip
 <li>建議出發前先在 Visit Japan Web 完成入境與海關申報，到了日本掃 QR Code 通關比較快</li>
 </ul>
 </div>
-
 <div class="tip-block">
 <h3>💴 日幣</h3>
 <ul>
@@ -1064,7 +529,6 @@ Okinawa Family Trip
 <li>準備一些百圓、五百圓零錢，自動販賣機和投幣式置物櫃常會用到</li>
 </ul>
 </div>
-
 <div class="tip-block">
 <h3>💊 常備藥品</h3>
 <ul>
@@ -1073,7 +537,6 @@ Okinawa Family Trip
 <li>部分含偽麻黃鹼等成分的感冒藥在日本受管制，出發前先確認成分，不確定的藥品不要帶</li>
 </ul>
 </div>
-
 <div class="tip-block">
 <h3>🧾 退稅（2026/11/1 起新制）</h3>
 <ul>
@@ -1086,104 +549,10 @@ Okinawa Family Trip
 </ul>
 <p class="tip-foot">依 2026 年 11 月公開資訊整理，實際請以店家與海關公告為準。</p>
 </div>
-
 </details>
-
 </section>
 
-<script>
-(function () {
-  var TZ = 8 * 3600 * 1000; // 台灣時間 UTC+8
-  var FIRST_FLIGHT = Date.parse("2026-11-21T09:45:00+08:00"); // CI310 起飛
-  var DAYS = [
-    { d: "2026-11-21", t: "抵達沖繩" },
-    { d: "2026-11-22", t: "北部海洋之旅" },
-    { d: "2026-11-23", t: "浦添・那霸市區" },
-    { d: "2026-11-24", t: "南部文化體驗" },
-    { d: "2026-11-25", t: "回台灣" }
-  ];
 
-  // 測試用：網址加 ?now=2026-11-22T10:00:00+08:00 可模擬時間
-  function now() {
-    try {
-      var p = new URLSearchParams(location.search).get("now");
-      if (p && !isNaN(Date.parse(p))) return Date.parse(p);
-    } catch (e) {}
-    return Date.now();
-  }
-  function twDate(ms) { return new Date(ms + TZ).toISOString().slice(0, 10); }
-  function pad(n) { return n < 10 ? "0" + n : "" + n; }
-
-  var el = document.getElementById("countdown");
-  var ttl = document.querySelector(".countdown-title");
-  var dayIdx = -1;
-
-  function tick() {
-    var t = now(), dist = FIRST_FLIGHT - t;
-    if (dist > 0) {
-      var days = Math.floor(dist / 86400000);
-      var hrs = Math.floor((dist % 86400000) / 3600000);
-      var min = Math.floor((dist % 3600000) / 60000);
-      var sec = Math.floor((dist % 60000) / 1000);
-      ttl.textContent = "沖繩出發倒數";
-      el.innerHTML = days + "天 " + pad(hrs) + "小時 " + pad(min) + "分 <span class=\"cd-sec\">" + pad(sec) + "</span>秒";
-      return;
-    }
-    var today = twDate(t);
-    var idx = -1;
-    for (var i = 0; i < DAYS.length; i++) if (DAYS[i].d === today) idx = i;
-    if (idx >= 0) {
-      ttl.textContent = "旅程進行中";
-      el.textContent = "Day " + (idx + 1) + " / 5｜" + DAYS[idx].t;
-    } else {
-      ttl.textContent = "旅程結束";
-      el.textContent = "🏡 歡迎回家，謝謝大家！";
-    }
-    dayIdx = idx;
-  }
-  tick();
-  setInterval(tick, 1000);
-
-  // 旅程期間：自動展開「今天」的行程
-  function openToday() {
-    if (dayIdx < 0) return;
-    var cards = document.querySelectorAll(".day-card");
-    for (var i = 0; i < cards.length; i++) {
-      var isToday = cards[i].getAttribute("data-day") === String(dayIdx + 1);
-      if (isToday) {
-        cards[i].setAttribute("open", "");
-        var sm = cards[i].querySelector("summary");
-        if (sm && !sm.querySelector(".today-badge")) {
-          var b = document.createElement("span");
-          b.className = "today-badge";
-          b.textContent = "今天";
-          sm.insertBefore(b, sm.firstChild);
-        }
-      } else {
-        cards[i].removeAttribute("open");
-      }
-    }
-  }
-  openToday();
-
-  // 天氣：自動抓那霸預報，失敗就保留手動值
-  var WD = ["日", "一", "二", "三", "四", "五", "六"];
-  function icon(c) {
-    if (c === 0) return "☀️";
-    if (c <= 2) return "🌤️";
-    if (c === 3) return "☁️";
-    if (c <= 48) return "🌫️";
-    if (c <= 57) return "🌦️";
-    if (c <= 67) return "🌧️";
-    if (c <= 77) return "🌨️";
-    if (c <= 82) return "🌦️";
-    if (c <= 86) return "🌨️";
-    return "⛈️";
-  }
-  function loadWeather() {
-    var note = document.getElementById("wx-note");
-    var url = "https://api.open-meteo.com/v1/forecast?latitude=26.2124&longitude=127.6809" +
-      "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
-      "&timezone=Asia%2FTokyo&start_date=2026-11-21&end_date=2026-11-25";
-    var ctrl = ("AbortController" in window) ? new AbortController() : null;
-    var ti
+<script src="app.js?v=1" defer></script>
+</body>
+</html>
