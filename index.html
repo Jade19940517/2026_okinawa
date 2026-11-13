@@ -247,6 +247,20 @@ font-size:1.2rem;
 .drive span{margin-left:82px;background:#f1f5f9;color:#64748b;font-size:.78rem;border-radius:20px;padding:2px 10px;}
 .callout{margin:6px 0 12px;background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:10px 12px;font-size:.85rem;}
 
+
+/* 美食推薦（橫向滑動） */
+.food-scroll{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch;}
+.food-scroll::-webkit-scrollbar{display:none;}
+.food-card{flex:none;width:210px;scroll-snap-align:start;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.09);display:flex;flex-direction:column;}
+.food-photo{display:block;width:100%;height:130px;object-fit:cover;background:#e0f2fe;}
+.food-body{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1;}
+.food-name{font-weight:700;font-size:1.02rem;line-height:1.35;}
+.food-meta{margin-top:6px;}
+.chip{display:inline-block;background:#ecfeff;color:#0e7490;border-radius:8px;padding:2px 8px;font-size:.78rem;margin-right:5px;}
+.chip.warm{background:#fff7ed;color:#c2410c;}
+.map-btn{margin-top:auto;padding-top:10px;}
+.map-btn a{display:inline-block;background:var(--ocean);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;border-radius:20px;padding:6px 13px;}
+
 </style>
 
 </head>
@@ -547,84 +561,51 @@ margin-bottom:10px;
 🍜 美食推薦
 </h2>
 
-<div class="scroll-cards">
+<div class="food-scroll">
 
-<div class="small-card">
-
-<img
-src="images/通堂拉麵.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-通堂拉麵
-
-<div class="small-card">
-
-<img
-src="images/豬肉蛋飯糰.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-豬肉蛋飯糰
-
+<div class="food-card">
+  <img class="food-photo" src="images/%E9%80%9A%E5%A0%82%E6%8B%89%E9%BA%B5.jpg" alt="通堂拉麵 小祿本店" loading="lazy">
+  <div class="food-body">
+    <div class="food-name">通堂拉麵 小祿本店</div>
+    <div class="food-meta"><span class="chip">拉麵</span></div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E9%80%9A%E5%A0%82%E6%8B%89%E9%BA%B5%20%E5%B0%8F%E7%A5%BF%E6%9C%AC%E5%BA%97%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
-<div class="small-card">
-
-<img
-src="images/漁師食堂.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-漁師食堂
-
+<div class="food-card">
+  <img class="food-photo" src="images/%E8%B1%AC%E8%82%89%E8%9B%8B%E9%A3%AF%E7%B3%B0.jpg" alt="沖繩豬肉蛋飯糰 本部町店" loading="lazy">
+  <div class="food-body">
+    <div class="food-name">沖繩豬肉蛋飯糰 本部町店</div>
+    <div class="food-meta"><span class="chip">沖繩飯糰</span></div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B9%A9%E8%B1%AC%E8%82%89%E8%9B%8B%E9%A3%AF%E7%B3%B0%20%E6%9C%AC%E9%83%A8%E7%94%BA%E5%BA%97" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
-<div class="small-card">
-
-<img
-src="images/琉球的牛.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-琉球的牛
-
+<div class="food-card">
+  <img class="food-photo" src="images/%E6%BC%81%E5%B8%AB%E9%A3%9F%E5%A0%82.jpg" alt="漁師食堂" loading="lazy">
+  <div class="food-body">
+    <div class="food-name">漁師食堂</div>
+    <div class="food-meta"><span class="chip">海鮮</span></div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%BC%81%E5%B8%AB%E9%A3%9F%E5%A0%82%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
-<div class="small-card">
+<div class="food-card">
+  <img class="food-photo" src="images/%E7%90%89%E7%90%83%E7%9A%84%E7%89%9B.jpg" alt="琉球的牛 久茂地店" loading="lazy">
+  <div class="food-body">
+    <div class="food-name">琉球的牛 久茂地店</div>
+    <div class="food-meta"><span class="chip">燒肉</span><span class="chip warm">需訂位</span></div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E7%90%89%E7%90%83%E3%81%AE%E7%89%9B%20%E4%B9%85%E8%8C%82%E5%9C%B0%E5%BA%97%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
+</div>
 
-<img
-src="images/紺 Kou.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-紺 Kou
-
+<div class="food-card">
+  <img class="food-photo" src="images/%E7%B4%BA%20Kou.jpg" alt="紺 Kou 東町本店" loading="lazy">
+  <div class="food-body">
+    <div class="food-name">紺 Kou 東町本店</div>
+    <div class="food-meta"><span class="chip">涮涮鍋</span></div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E7%B4%BA%20Kou%20%E6%9D%B1%E7%94%BA%E6%9C%AC%E5%BA%97%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
 </div>
