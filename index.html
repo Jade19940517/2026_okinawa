@@ -221,6 +221,32 @@ font-size:1.2rem;
 
 }
 
+
+/* 每日行程時間軸 */
+.day-card{padding:6px 18px;}
+.day-card summary{font-weight:700;font-size:1.02rem;padding:14px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.day-card summary::-webkit-details-marker{display:none;}
+.day-card summary::after{content:"▾";color:var(--ocean);font-size:1.1rem;}
+.day-card:not([open]) summary::after{content:"▸";}
+.day-card[open] summary{border-bottom:1px dashed #e2e8f0;margin-bottom:14px;}
+.timeline{position:relative;padding:4px 0 14px;}
+.timeline::before{content:"";position:absolute;left:62px;top:8px;bottom:22px;width:3px;background:linear-gradient(#bae6fd,var(--ocean),#bae6fd);border-radius:3px;}
+.stop{position:relative;display:flex;margin-bottom:4px;}
+.time{width:52px;flex:none;text-align:right;font-weight:700;font-size:.95rem;color:#0f766e;padding-top:1px;font-variant-numeric:tabular-nums;}
+.time.none{color:#cbd5e1;font-weight:400;}
+.dot{position:absolute;left:55px;top:5px;width:17px;height:17px;border-radius:50%;background:#fff;border:4px solid var(--ocean);}
+.stop.meal .dot{border-color:#ea7a1a;}
+.stop.end .dot{border-color:#0f766e;background:#0f766e;}
+.stop .body{margin-left:30px;padding-bottom:8px;flex:1;}
+.stop .title{font-weight:600;font-size:1rem;}
+.stop.meal .title{color:#b45309;}
+.tag{display:inline-block;margin:5px 6px 0 0;background:#ecfeff;color:#0e7490;border-radius:8px;padding:3px 9px;font-size:.8rem;}
+.tag.warn{background:#fef2f2;color:#b91c1c;}
+.tag.food{background:#fff7ed;color:#c2410c;}
+.drive{display:flex;margin:2px 0 6px;}
+.drive span{margin-left:82px;background:#f1f5f9;color:#64748b;font-size:.78rem;border-radius:20px;padding:2px 10px;}
+.callout{margin:6px 0 12px;background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:10px 12px;font-size:.85rem;}
+
 </style>
 
 </head>
@@ -804,119 +830,92 @@ margin-bottom:15px;
 📅 每日行程
 </h2>
 
-<details open class="card">
-
-<summary>
-🏝️ Day 1｜11/21（六）抵達沖繩
-</summary>
-
-<br>
-
-🛬 12:15 抵達那霸機場（第一批家人）<br>
-👨‍👩‍👧‍👦 13:15 包車接機<br>
-    🚘(通車時間10分鐘)<br>
-🍜 13:25【午餐】通堂拉麵 小祿本店<br>
-    🚘(通車時間20分鐘)<br>
-🐠 14:20 DMM Kariyushi Aquarium<br>
-    🚘(通車時間20分鐘)<br>
-🛬 16:40 接第二批家人<br>
-    🚘(通車時間10分鐘)<br>
-🍣 17:10【晚餐】漁師食堂 晚餐<br>
-    🚘(通車時間10分鐘)<br>
-🏨 18:50 民宿Check in
-
+<details open class="card day-card">
+<summary>🏝️ Day 1｜11/21（六）抵達沖繩</summary>
+<div class="timeline">
+  <div class="stop"><div class="time">12:15</div><div class="dot"></div><div class="body"><div class="title">🛬 抵達那霸機場</div><span class="tag">第一批家人</span></div></div>
+  <div class="stop"><div class="time">13:15</div><div class="dot"></div><div class="body"><div class="title">👨‍👩‍👧‍👦 包車接機</div></div></div>
+  <div class="drive"><span>🚘 10 分鐘</span></div>
+  <div class="stop meal"><div class="time">13:25</div><div class="dot"></div><div class="body"><div class="title">🍜 午餐｜通堂拉麵 小祿本店</div></div></div>
+  <div class="drive"><span>🚘 20 分鐘</span></div>
+  <div class="stop"><div class="time">14:20</div><div class="dot"></div><div class="body"><div class="title">🐠 DMM Kariyushi Aquarium</div></div></div>
+  <div class="drive"><span>🚘 20 分鐘</span></div>
+  <div class="stop"><div class="time">16:40</div><div class="dot"></div><div class="body"><div class="title">🛬 接第二批家人</div></div></div>
+  <div class="drive"><span>🚘 10 分鐘</span></div>
+  <div class="stop meal"><div class="time">17:10</div><div class="dot"></div><div class="body"><div class="title">🍣 晚餐｜漁師食堂</div></div></div>
+  <div class="drive"><span>🚘 10 分鐘</span></div>
+  <div class="stop end"><div class="time">18:50</div><div class="dot"></div><div class="body"><div class="title">🏨 民宿 Check in</div></div></div>
+</div>
 </details>
 
-<details class="card">
-
-<summary>
-🌊 Day 2｜11/22（日）北部海洋之旅
-</summary>
-
-<br>
-
-🚌 09:00 民宿出發<br>
-    🚘(通車時間50分鐘)<br>
-🌊 10:00 部瀨名海中公園(❇️ 建議搭乘10:30玻璃船)<br>
-    🚘(通車時間35分鐘)<br> 
-📸 12:15 The Sinmay(❇️ 必喝黑糖系列飲品)<br>
-    🚘(通車時間20分鐘)<br>
-🍙 13:05【午餐】沖繩豬肉蛋飯糰 本部町店<br>
-    🚘(通車時間5分鐘)<br>
-🐋 14:15 美麗海水族館(❇️ 最晚16:30要離開)<br>
-    🚘(通車時間2小時)<br>
-🌅 18:45 美國村自由活動<br>
-🌮 【晚餐】Taco Rice Cafe Kijimuna <br>
-    🚘(通車時間30分鐘)<br>
-🏨 21:00 抵達民宿
-    ⚠️這天包車只到晚上19點，可以付超時費到21點，可視當日情況調整是否去美國村
-
+<details class="card day-card">
+<summary>🌊 Day 2｜11/22（日）北部海洋之旅</summary>
+<div class="timeline">
+  <div class="stop"><div class="time">09:00</div><div class="dot"></div><div class="body"><div class="title">🚌 民宿出發</div></div></div>
+  <div class="drive"><span>🚘 50 分鐘</span></div>
+  <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🌊 部瀨名海中公園</div><span class="tag">❇️ 建議搭乘 10:30 玻璃船</span></div></div>
+  <div class="drive"><span>🚘 35 分鐘</span></div>
+  <div class="stop"><div class="time">12:15</div><div class="dot"></div><div class="body"><div class="title">📸 The Sinmay</div><span class="tag">❇️ 必喝黑糖系列飲品</span></div></div>
+  <div class="drive"><span>🚘 20 分鐘</span></div>
+  <div class="stop meal"><div class="time">13:05</div><div class="dot"></div><div class="body"><div class="title">🍙 午餐｜沖繩豬肉蛋飯糰 本部町店</div></div></div>
+  <div class="drive"><span>🚘 5 分鐘</span></div>
+  <div class="stop"><div class="time">14:15</div><div class="dot"></div><div class="body"><div class="title">🐋 美麗海水族館</div><span class="tag warn">⏰ 最晚 16:30 要離開</span></div></div>
+  <div class="drive"><span>🚘 2 小時</span></div>
+  <div class="stop"><div class="time">18:45</div><div class="dot"></div><div class="body"><div class="title">🌅 美國村自由活動</div></div></div>
+  <div class="stop meal"><div class="time none">—</div><div class="dot"></div><div class="body"><div class="title">🌮 晚餐｜Taco Rice Cafe Kijimuna</div></div></div>
+  <div class="drive"><span>🚘 30 分鐘</span></div>
+  <div class="stop end"><div class="time">21:00</div><div class="dot"></div><div class="body"><div class="title">🏨 抵達民宿</div></div></div>
+</div>
+<div class="callout">⚠️ 這天包車只到晚上 19 點，可付超時費延到 21 點，視當日情況調整是否去美國村。</div>
 </details>
 
-<details class="card">
-
-<summary>
-🏙️ Day 3｜11/23（一）浦添・那霸市區
-</summary>
-
-<br>
-
-🚌 10:00 民宿出發<br>
-    🚘(通車時間10分鐘)
-🏘️ 10:10 港川外人住宅街<br>
-    🚘(通車時間10分鐘)
-🛍️ 11:10 SAN-A PARCO CITY(❇️ 最晚14:30要離開)<br>
-    🍱 【午餐館內自由用餐】<br>
-    🚘(通車時間20分鐘)
-🏯 14:50 達摩寺<br>
-    🚘(通車時間30分鐘)
-⛩️ 16:00 波上宮<br>
-    🚘(通車時間20分鐘)
-🥩 17:15【晚餐】琉球的牛 久茂地店(17:15*1組+17:30*2組+17:45*1組)<br>
-    🚘(通車時間10分鐘)
-🏨 19:40 Daiwa Roynet Hotel Check in
-
+<details class="card day-card">
+<summary>🏙️ Day 3｜11/23（一）浦添・那霸市區</summary>
+<div class="timeline">
+  <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 民宿出發</div></div></div>
+  <div class="drive"><span>🚘 10 分鐘</span></div>
+  <div class="stop"><div class="time">10:10</div><div class="dot"></div><div class="body"><div class="title">🏘️ 港川外人住宅街</div></div></div>
+  <div class="drive"><span>🚘 10 分鐘</span></div>
+  <div class="stop"><div class="time">11:10</div><div class="dot"></div><div class="body"><div class="title">🛍️ SAN-A PARCO CITY</div><span class="tag warn">⏰ 最晚 14:30 要離開</span><span class="tag food">🍱 午餐：館內自由用餐</span></div></div>
+  <div class="drive"><span>🚘 20 分鐘</span></div>
+  <div class="stop"><div class="time">14:50</div><div class="dot"></div><div class="body"><div class="title">🏯 達摩寺</div></div></div>
+  <div class="drive"><span>🚘 30 分鐘</span></div>
+  <div class="stop"><div class="time">16:00</div><div class="dot"></div><div class="body"><div class="title">⛩️ 波上宮</div></div></div>
+  <div class="drive"><span>🚘 20 分鐘</span></div>
+  <div class="stop meal"><div class="time">17:15</div><div class="dot"></div><div class="body"><div class="title">🥩 晚餐｜琉球的牛 久茂地店</div><span class="tag food">17:15 × 1 組 ＋ 17:30 × 2 組 ＋ 17:45 × 1 組</span></div></div>
+  <div class="drive"><span>🚘 10 分鐘</span></div>
+  <div class="stop end"><div class="time">19:40</div><div class="dot"></div><div class="body"><div class="title">🏨 Daiwa Roynet Hotel Check in</div></div></div>
+</div>
 </details>
 
-<details class="card">
-
-<summary>
-🛍️ Day 4｜11/24（二）南部文化體驗
-</summary>
-
-<br>
-
-🚌 10:00 飯店出發<br>
-    🚘(通車時間30分鐘)
-🕳️ 10:30 玉泉洞<br>
-    🚘(通車時間40分鐘)
-🍱 13:10【午餐】第一牧志公設市場<br>
-🛍️ 15:10 國際通逛逛買買(❇️ 最晚17:50要離開)<br>
-    🚘(通車時間5分鐘)
-🥘 18:00【晚餐】紺 Kou 東町本店<br>
-🏨 19:30 返回飯店
-
+<details class="card day-card">
+<summary>🛍️ Day 4｜11/24（二）南部文化體驗</summary>
+<div class="timeline">
+  <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 飯店出發</div></div></div>
+  <div class="drive"><span>🚘 30 分鐘</span></div>
+  <div class="stop"><div class="time">10:30</div><div class="dot"></div><div class="body"><div class="title">🕳️ 玉泉洞</div></div></div>
+  <div class="drive"><span>🚘 40 分鐘</span></div>
+  <div class="stop meal"><div class="time">13:10</div><div class="dot"></div><div class="body"><div class="title">🍱 午餐｜第一牧志公設市場</div></div></div>
+  <div class="stop"><div class="time">15:10</div><div class="dot"></div><div class="body"><div class="title">🛍️ 國際通逛逛買買</div><span class="tag warn">⏰ 最晚 17:50 要離開</span></div></div>
+  <div class="drive"><span>🚘 5 分鐘</span></div>
+  <div class="stop meal"><div class="time">18:00</div><div class="dot"></div><div class="body"><div class="title">🥘 晚餐｜紺 Kou 東町本店</div></div></div>
+  <div class="stop end"><div class="time">19:30</div><div class="dot"></div><div class="body"><div class="title">🏨 返回飯店</div></div></div>
+</div>
 </details>
 
-<details class="card">
-
-<summary>
-✈️ Day 5｜11/25（三）回台灣
-</summary>
-
-<br>
-
-🚌 10:00 飯店出發<br>
-    🚘(通車時間10分鐘)
-🐟 10:10 泊港漁市場<br>
-    🚘(通車時間30分鐘)
-🌴 11:40 瀨長島 Umikaji Terrace(❇️ 最晚14:00要離開)<br>
-    🍴 【午餐＋自由活動】<br>
-    🚘(通車時間10分鐘)
-🛫 14:10 抵達那霸機場辦理報到及退稅<br>
-✈️ 16:45 JX303 起飛返台<br>
-🛬 17:35 抵達台中
-
+<details class="card day-card">
+<summary>✈️ Day 5｜11/25（三）回台灣</summary>
+<div class="timeline">
+  <div class="stop"><div class="time">10:00</div><div class="dot"></div><div class="body"><div class="title">🚌 飯店出發</div></div></div>
+  <div class="drive"><span>🚘 10 分鐘</span></div>
+  <div class="stop"><div class="time">10:10</div><div class="dot"></div><div class="body"><div class="title">🐟 泊港漁市場</div></div></div>
+  <div class="drive"><span>🚘 30 分鐘</span></div>
+  <div class="stop"><div class="time">11:40</div><div class="dot"></div><div class="body"><div class="title">🌴 瀨長島 Umikaji Terrace</div><span class="tag warn">⏰ 最晚 14:00 要離開</span><span class="tag food">🍴 午餐＋自由活動</span></div></div>
+  <div class="drive"><span>🚘 10 分鐘</span></div>
+  <div class="stop"><div class="time">14:10</div><div class="dot"></div><div class="body"><div class="title">🛫 抵達那霸機場辦理報到及退稅</div></div></div>
+  <div class="stop"><div class="time">16:45</div><div class="dot"></div><div class="body"><div class="title">✈️ JX303 起飛返台</div></div></div>
+  <div class="stop end"><div class="time">17:35</div><div class="dot"></div><div class="body"><div class="title">🛬 抵達台中</div></div></div>
+</div>
 </details>
 
 </section>
