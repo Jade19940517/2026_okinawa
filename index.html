@@ -261,6 +261,22 @@ font-size:1.2rem;
 .map-btn{margin-top:auto;padding-top:10px;}
 .map-btn a{display:inline-block;background:var(--ocean);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;border-radius:20px;padding:6px 13px;}
 
+
+/* 景點推薦（橫向滑動） */
+.spot-scroll{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch;}
+.spot-scroll::-webkit-scrollbar{display:none;}
+.spot-card{flex:none;width:210px;scroll-snap-align:start;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.09);display:flex;flex-direction:column;}
+.spot-photo{display:block;width:100%;height:130px;object-fit:cover;background:#e0f2fe;}
+.spot-photo.ph{display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.spot-body{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1;}
+.spot-name{font-weight:700;font-size:1.02rem;line-height:1.35;}
+.spot-meta{margin-top:6px;}
+.spot-desc{margin-top:8px;font-size:.84rem;color:#475569;line-height:1.5;}
+.chip{display:inline-block;background:#ecfeff;color:#0e7490;border-radius:8px;padding:2px 8px;font-size:.78rem;margin-right:5px;}
+.chip.soft{background:#f1f5f9;color:#64748b;}
+.map-btn{margin-top:auto;padding-top:10px;}
+.map-btn a{display:inline-block;background:var(--ocean);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;border-radius:20px;padding:6px 13px;}
+
 </style>
 
 </head>
@@ -451,102 +467,116 @@ Okinawa Family Trip
 📍 必訪景點
 </h2>
 
-<div class="scroll-cards">
+<div class="spot-scroll">
 
-<div class="small-card">
-
-<img
-src="images/dmm_kariyushi_aquarium.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-DMM Aquarium
-
+<div class="spot-card">
+  <img class="spot-photo" src="images/dmm_kariyushi_aquarium.jpg" alt="DMM Kariyushi Aquarium" loading="lazy">
+  <div class="spot-body">
+    <div class="spot-name">DMM Kariyushi Aquarium</div>
+    <div class="spot-meta"><span class="chip">必訪</span></div>
+    <div class="spot-desc">那霸的室內水族館，結合燈光與影像的夢幻展演</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=DMM%20Kariyushi%20Aquarium%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
-<div class="small-card">
-
-<img
-src="images/美麗海水族館.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-美麗海水族館
-
+<div class="spot-card">
+  <div class="spot-photo ph" style="background:linear-gradient(135deg,#a5f3fc,#06b6d4)">🌊</div>
+  <div class="spot-body">
+    <div class="spot-name">部瀨名海中公園</div>
+    <div class="spot-meta"><span class="chip">必訪</span></div>
+    <div class="spot-desc">搭玻璃底船，近看海底珊瑚與熱帶魚</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E9%83%A8%E7%80%A8%E5%90%8D%E6%B5%B7%E4%B8%AD%E5%85%AC%E5%9C%92%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
-<div class="small-card">
-
-<img
-src="images/美國村.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-美國村
-
+<div class="spot-card">
+  <img class="spot-photo" src="images/%E7%BE%8E%E9%BA%97%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8.jpg" alt="美麗海水族館" loading="lazy">
+  <div class="spot-body">
+    <div class="spot-name">美麗海水族館</div>
+    <div class="spot-meta"><span class="chip">必訪</span></div>
+    <div class="spot-desc">沖繩最經典的景點，大水槽裡有鯨鯊和鬼蝠魟</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B9%A9%E7%BE%8E%E9%BA%97%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
-<div class="small-card">
-
-<img
-src="images/波上宮.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-波上宮
-
+<div class="spot-card">
+  <img class="spot-photo" src="images/%E7%BE%8E%E5%9C%8B%E6%9D%91.jpg" alt="美國村" loading="lazy">
+  <div class="spot-body">
+    <div class="spot-name">美國村</div>
+    <div class="spot-meta"><span class="chip">必訪</span></div>
+    <div class="spot-desc">美式風格商圈，逛街吃飯、看夕陽都很適合</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E8%B0%B7%E7%BE%8E%E5%9C%8B%E6%9D%91%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
-<div class="small-card">
-
-<img
-src="images/國際通.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
-
-國際通
-
+<div class="spot-card">
+  <div class="spot-photo ph" style="background:linear-gradient(135deg,#fde68a,#f59e0b)">🏘️</div>
+  <div class="spot-body">
+    <div class="spot-name">港川外人住宅街</div>
+    <div class="spot-meta"><span class="chip soft">順路小景點</span></div>
+    <div class="spot-desc">舊時外籍人士住宅改成的特色小店與咖啡街區</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B8%AF%E5%B7%9D%E5%A4%96%E4%BA%BA%E4%BD%8F%E5%AE%85%E8%A1%97%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
-<div class="small-card">
+<div class="spot-card">
+  <div class="spot-photo ph" style="background:linear-gradient(135deg,#e9d5ff,#a855f7)">🏯</div>
+  <div class="spot-body">
+    <div class="spot-name">達摩寺</div>
+    <div class="spot-meta"><span class="chip soft">順路小景點</span></div>
+    <div class="spot-desc">以達摩為主題的寺廟，順路走走參拜</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E9%81%94%E6%91%A9%E5%AF%BA%20%E6%B5%A6%E6%B7%BB%20%E6%B2%96%E7%B9%A9" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
+</div>
 
-<img
-src="images/瀨長島.jpg"
-style="
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-">
+<div class="spot-card">
+  <img class="spot-photo" src="images/%E6%B3%A2%E4%B8%8A%E5%AE%AE.jpg" alt="波上宮" loading="lazy">
+  <div class="spot-body">
+    <div class="spot-name">波上宮</div>
+    <div class="spot-meta"><span class="chip">必訪</span></div>
+    <div class="spot-desc">建在海邊崖上的神社，是沖繩最具代表性的神社</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B8%8A%E5%AE%AE%20%E9%82%A3%E9%9C%B8" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
+</div>
 
-瀨長島
+<div class="spot-card">
+  <div class="spot-photo ph" style="background:linear-gradient(135deg,#d9f99d,#65a30d)">🕳️</div>
+  <div class="spot-body">
+    <div class="spot-name">玉泉洞</div>
+    <div class="spot-meta"><span class="chip">必訪</span></div>
+    <div class="spot-desc">大型鐘乳石洞，走進地底欣賞自然奇景</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E7%8E%89%E6%B3%89%E6%B4%9E%20%E6%B2%96%E7%B9%A9%E4%B8%96%E7%95%8C" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
+</div>
 
+<div class="spot-card">
+  <img class="spot-photo" src="images/%E5%9C%8B%E9%9A%9B%E9%80%9A.jpg" alt="國際通" loading="lazy">
+  <div class="spot-body">
+    <div class="spot-name">國際通</div>
+    <div class="spot-meta"><span class="chip">必訪</span></div>
+    <div class="spot-desc">那霸最熱鬧的大街，伴手禮和小吃一次逛完</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E5%9C%8B%E9%9A%9B%E9%80%9A%20%E9%82%A3%E9%9C%B8" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
+</div>
+
+<div class="spot-card">
+  <div class="spot-photo ph" style="background:linear-gradient(135deg,#bfdbfe,#3b82f6)">🐟</div>
+  <div class="spot-body">
+    <div class="spot-name">泊港漁市場</div>
+    <div class="spot-meta"><span class="chip soft">順路小景點</span></div>
+    <div class="spot-desc">在地漁市場，感受沖繩的海鮮與生活氣息</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%8A%E6%B8%AF%E6%BC%81%E5%B8%82%E5%A0%B4%20%E9%82%A3%E9%9C%B8" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
+</div>
+
+<div class="spot-card">
+  <img class="spot-photo" src="images/%E7%80%A8%E9%95%B7%E5%B3%B6.jpg" alt="瀨長島" loading="lazy">
+  <div class="spot-body">
+    <div class="spot-name">瀨長島</div>
+    <div class="spot-meta"><span class="chip">必訪</span></div>
+    <div class="spot-desc">海邊的白色露台，飛機從頭頂起降，日落特別美</div>
+    <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=%E7%80%A8%E9%95%B7%E5%B3%B6%20Umikaji%20Terrace" target="_blank" rel="noopener">📍 地圖</a></div>
+  </div>
 </div>
 
 </div>
