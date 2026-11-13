@@ -413,6 +413,33 @@ html{scroll-behavior:smooth;}
   html{scroll-behavior:auto;}
 }
 
+
+/* 公寓：每戶 → 房間 → 床型 */
+.unit-list{padding:4px 0 2px;}
+.unit{background:#f0f9ff;border:2px solid #bae6fd;border-radius:18px;padding:12px;margin-bottom:12px;}
+.unit-head{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;font-weight:700;color:#0284c7;font-size:1rem;}
+.unit-tag{font-size:.74rem;font-weight:600;background:#fff;color:#0e7490;border-radius:8px;padding:2px 8px;}
+.uroom{background:#fff;border-radius:14px;padding:10px 12px;margin-top:8px;}
+.uroom-head{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.uroom-head b{font-size:.9rem;color:#0f766e;}
+.uroom .bed{font-size:.76rem;color:#0e7490;background:#ecfeff;border-radius:8px;padding:2px 8px;}
+.unit-people{display:flex;flex-wrap:wrap;gap:6px;}
+.unit-people span{background:#f0f9ff;border-radius:12px;padding:4px 11px;font-size:.92rem;}
+.unit-share{margin-top:10px;font-size:.8rem;line-height:1.5;color:#0f766e;background:#ecfdf5;border-radius:10px;padding:6px 10px;}
+
+
+.unit-note{margin-top:10px;font-size:.82rem;font-weight:600;line-height:1.5;color:#92400e;background:#fffbeb;border:1px dashed #fcd34d;border-radius:10px;padding:6px 10px;}
+.unit-note + .unit-share{margin-top:8px;}
+
+
+/* 飯店客房：房間 → 房型 */
+.hroom-list{padding:4px 0 2px;}
+.hroom{background:#f0f9ff;border-radius:14px;padding:10px 12px;margin-bottom:10px;}
+.hroom-head{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.hroom-head b{font-size:.92rem;color:#0284c7;}
+.hroom .bed{font-size:.76rem;color:#0e7490;background:#fff;border-radius:8px;padding:2px 8px;}
+.hroom .unit-people span{background:#fff;}
+
 </style>
 
 </head>
@@ -833,11 +860,42 @@ Okinawa Family Trip
     <div class="stay-name">HOTEL HAABESU</div>
     <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=HOTEL%20HAABESU%20OKINAWA" target="_blank" rel="noopener">📍 地圖</a></div>
     <details class="rooms">
-      <summary>🛏️ 房間分配（3 間）</summary>
-      <div class="room-grid">
-<div class="room"><b>Room 1</b><span>二阿姨二姨丈</span><span>小阿姨小姨丈</span></div>
-<div class="room"><b>Room 2</b><span>大姨</span><span>明寶</span><span>小茜</span><span>吳小弟</span></div>
-<div class="room"><b>Room 3</b><span>佩妏</span><span>小琪</span><span>易宣</span><span>雅涵</span><span>蘇小弟</span></div>
+      <summary>🛏️ 房間分配（共 3 戶公寓）</summary>
+      <div class="unit-list">
+<div class="unit">
+  <div class="unit-head"><span>🏠 A 戶</span><span class="unit-tag">整戶公寓・2 房</span></div>
+  <div class="uroom">
+    <div class="uroom-head"><b>房間 1</b><span class="bed">🛏️ 雙人床</span></div>
+    <div class="unit-people"><span>二阿姨</span><span>二姨丈</span></div>
+  </div>
+  <div class="uroom">
+    <div class="uroom-head"><b>房間 2</b><span class="bed">🛏️🛏️ 兩張單人床</span></div>
+    <div class="unit-people"><span>小阿姨</span><span>小姨丈</span></div>
+  </div>
+  <div class="unit-note">📝 房間進去後再自己選</div>
+  <div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
+</div>
+<div class="unit">
+  <div class="unit-head"><span>🏠 B 戶</span><span class="unit-tag">整戶公寓・2 房</span></div>
+  <div class="uroom">
+    <div class="uroom-head"><b>房間 1</b><span class="bed">🛏️ 雙人床</span></div>
+    <div class="unit-people"><span>大姨</span></div>
+  </div>
+  <div class="uroom">
+    <div class="uroom-head"><b>房間 2</b><span class="bed">🛏️🛏️ 兩張單人床</span></div>
+    <div class="unit-people"><span>明寶</span><span>小茜</span><span>程翰</span></div>
+  </div>
+  <div class="unit-note">📝 房間進去後再自己選</div>
+  <div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
+</div>
+<div class="unit">
+  <div class="unit-head"><span>🏠 C 戶</span><span class="unit-tag">整戶公寓・1 房</span></div>
+  <div class="uroom">
+    <div class="uroom-head"><b>房間</b><span class="bed">🛏️🛏️🛏️ 雙人床＋兩張單人床</span></div>
+    <div class="unit-people"><span>佩妏</span><span>小琪</span><span>易宣</span><span>雅涵</span><span>彣烜</span></div>
+  </div>
+  <div class="unit-share">🛋️ 客廳・🍳 廚房・🚿 衛浴｜整戶獨立使用</div>
+</div>
       </div>
     </details>
   </div>
@@ -850,13 +908,28 @@ Okinawa Family Trip
     <div class="stay-name">Daiwa Roynet Hotel Naha Kokusaidori</div>
     <div class="map-btn"><a href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20Naha%20Kokusaidori" target="_blank" rel="noopener">📍 地圖</a></div>
     <details class="rooms">
-      <summary>🛏️ 房間分配（5 間）</summary>
-      <div class="room-grid">
-<div class="room"><b>Room 1</b><span>二阿姨二姨丈</span></div>
-<div class="room"><b>Room 2</b><span>小阿姨小姨丈</span></div>
-<div class="room"><b>Room 3</b><span>明寶</span><span>小茜</span><span>吳小弟</span></div>
-<div class="room"><b>Room 4</b><span>易宣</span><span>雅涵</span><span>蘇小弟</span></div>
-<div class="room"><b>Room 5</b><span>大姨</span><span>佩妏</span><span>小琪</span></div>
+      <summary>🛏️ 房間分配（5 間客房）</summary>
+      <div class="hroom-list">
+<div class="hroom">
+  <div class="hroom-head"><b>Room 1</b><span class="bed">🛏️🛏️ 雙床房</span></div>
+  <div class="unit-people"><span>二阿姨</span><span>二姨丈</span></div>
+</div>
+<div class="hroom">
+  <div class="hroom-head"><b>Room 2</b><span class="bed">🛏️🛏️ 雙床房</span></div>
+  <div class="unit-people"><span>小阿姨</span><span>小姨丈</span></div>
+</div>
+<div class="hroom">
+  <div class="hroom-head"><b>Room 3</b><span class="bed">🛏️🛏️ 雙床房</span></div>
+  <div class="unit-people"><span>明寶</span><span>小茜</span><span>程翰</span></div>
+</div>
+<div class="hroom">
+  <div class="hroom-head"><b>Room 4</b><span class="bed">🛏️🛏️ 雙床房</span></div>
+  <div class="unit-people"><span>易宣</span><span>雅涵</span><span>彣烜</span></div>
+</div>
+<div class="hroom">
+  <div class="hroom-head"><b>Room 5</b><span class="bed">🛏️🛏️🛏️ 三人房</span></div>
+  <div class="unit-people"><span>大姨</span><span>佩妏</span><span>小琪</span></div>
+</div>
       </div>
     </details>
   </div>
@@ -1113,81 +1186,4 @@ Okinawa Family Trip
       "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
       "&timezone=Asia%2FTokyo&start_date=2026-11-21&end_date=2026-11-25";
     var ctrl = ("AbortController" in window) ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
-    fetch(url, ctrl ? { signal: ctrl.signal } : {})
-      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
-      .then(function (j) {
-        clearTimeout(timer);
-        var d = j.daily;
-        if (!d || !d.time || d.time.length < 5) throw new Error("no data");
-        var cols = document.querySelectorAll("#wx-grid .wx-col");
-        for (var i = 0; i < 5 && i < cols.length; i++) {
-          var dt = new Date(d.time[i] + "T00:00:00Z");
-          var mm = pad(dt.getUTCMonth() + 1), dd = pad(dt.getUTCDate());
-          cols[i].querySelector(".wx-date").innerHTML = mm + "/" + dd + "<small>（" + WD[dt.getUTCDay()] + "）</small>";
-          cols[i].querySelector(".wx-ico").textContent = icon(d.weather_code[i]);
-          cols[i].querySelector(".wx-temp").innerHTML = Math.round(d.temperature_2m_min[i]) + "°<span>/</span>" + Math.round(d.temperature_2m_max[i]) + "°";
-          var p = d.precipitation_probability_max ? d.precipitation_probability_max[i] : null;
-          cols[i].querySelector(".wx-rain").textContent = (p === null || p === undefined) ? "" : "💧" + p + "%";
-        }
-        note.textContent = "✅ 即時預報（Open-Meteo），每次開啟自動更新";
-      })
-      .catch(function () {
-        clearTimeout(timer);
-        note.textContent = "ℹ️ 目前無法取得即時預報，顯示的是手動整理的參考值";
-      });
-  }
-  loadWeather();
-
-  // 快速導覽：標示目前所在區塊
-  var links = document.querySelectorAll("#quick-nav a");
-  var map = {};
-  for (var k = 0; k < links.length; k++) map[links[k].getAttribute("href").slice(1)] = links[k];
-  var nav = document.querySelector("#quick-nav .quick-nav-inner");
-  function setActive(id) {
-    for (var key in map) map[key].classList.toggle("active", key === id);
-    var a = map[id];
-    if (a && nav) nav.scrollTo({ left: a.offsetLeft - 16, behavior: "smooth" });
-  }
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
-    }, { rootMargin: "-30% 0px -60% 0px" });
-    Object.keys(map).forEach(function (id) {
-      var sec = document.getElementById(id);
-      if (sec) io.observe(sec);
-    });
-  }
-})();
-</script>
-<script>
-(function () {
-  var reduce = false;
-  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
-  if (reduce || !("IntersectionObserver" in window)) return; // 不支援或使用者不要動畫：維持全部直接顯示
-  var root = document.documentElement;
-  var secs = document.querySelectorAll(".section");
-  for (var i = 0; i < secs.length; i++) {
-    var kids = secs[i].querySelectorAll(".spot-card,.food-card,.stay-card,.day-card,.flight-card");
-    for (var j = 0; j < kids.length; j++) kids[j].style.setProperty("--i", Math.min(j, 6));
-  }
-  root.classList.add("js-anim");
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-    });
-  }, { threshold: 0.06, rootMargin: "0px 0px -6% 0px" });
-  for (var k = 0; k < secs.length; k++) io.observe(secs[k]);
-  // 保險：若 3 秒後仍有區塊沒出現（例如瀏覽器異常），直接全部顯示
-  setTimeout(function () {
-    var rest = document.querySelectorAll(".section:not(.in)");
-    for (var m = 0; m < rest.length; m++) {
-      var r = rest[m].getBoundingClientRect();
-      if (r.top < window.innerHeight * 1.2 && r.bottom > 0) rest[m].classList.add("in");
-    }
-  }, 3000);
-})();
-</script>
-</body>
-
-</html>
+    var ti
